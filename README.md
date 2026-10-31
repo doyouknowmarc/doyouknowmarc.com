@@ -1,5 +1,9 @@
 # Do you know Marc?
 
+Published portfolio: https://doyouknowmarc.com/
+
+Source: https://github.com/doyouknowmarc/doyouknowmarc.com
+
 A responsive static portfolio for Marc. Plain HTML, CSS and a tiny optional-video script. No build step or dependencies. Works on GitHub Pages, including repository subpaths.
 
 ## Publish on GitHub Pages
@@ -16,7 +20,9 @@ Edit `site-config.js` and set `introVideoUrl` to your shareable HTTPS video link
 
 ## Custom domain: doyouknowmarc.com
 
-After the GitHub Pages site works, add `doyouknowmarc.com` in its Pages custom-domain setting and follow GitHub's DNS instructions for your domain provider. Keep any generated `CNAME` file in the repository. Enable HTTPS when available. DNS has not been changed and the domain has not been connected by this project.
+The custom domain is assigned to this repository in GitHub Pages. Cloudflare DNS has four apex A records for GitHub Pages and a DNS-only `www` CNAME pointing to `doyouknowmarc.github.io`. The existing Cutmap record remains separate. The previous GitHub Pages domain assignment on `doyouknowmarc/home` was removed.
+
+This repository uses a GitHub Actions publishing workflow. The custom-domain setting is managed in GitHub Pages settings; a CNAME file is not required for this publishing mode.
 
 ## Preview locally
 
