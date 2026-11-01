@@ -8,7 +8,7 @@ A minimal black-and-white portfolio with real project imagery, talk and video pr
 ## Content
 
 - `index.html`: public copy, four project cards, three featured video links and eleven library cards. All eight supplied YouTube links and ten supplied LinkedIn links are retained across the page.
-- `styles.css`: monochrome palette, serif headings, responsive layouts and grayscale image presentation. Original bundled image files retain their colour.
+- `styles.css`: monochrome palette, serif headings, responsive layouts and grayscale image presentation. Original bundled image files retain their colour, which is revealed on card hover and keyboard focus.
 - `script.js`: accessible Everything / Videos / Posts filtering and configurable introduction link.
 - `site-config.js`: introduction-video URL. Update the corresponding featured-video image and its linked card in index.html if changing the video.
 - `assets/media/`: real supplied-video thumbnails, LinkedIn previews, the public Sensei screenshot and an existing screenshot of Marc’s Teleprompter app.
