@@ -1,52 +1,31 @@
-# Do you know Marc?
+# Marc Kroll — personal portfolio
 
-Published portfolio: https://doyouknowmarc.com/
-
+Live: https://doyouknowmarc.com/
 Source: https://github.com/doyouknowmarc/doyouknowmarc.com
 
-A responsive static portfolio for Marc. Plain HTML, CSS and a tiny optional-video script. No build step or dependencies. Works on GitHub Pages, including repository subpaths.
+A minimal black-and-white portfolio with real project imagery, talk and video previews, a filterable content library, and teaching/community experience. Plain HTML, CSS and JavaScript; no build step, packages, remote font dependencies or analytics.
 
-## Publish on GitHub Pages
+## Content
 
-1. Create a GitHub repository and push **the contents of this folder** to its `main` branch. Keep `index.html` at the repository root. Include the hidden `.github` folder and `.nojekyll` file.
-2. In the repository, open **Settings → Pages → Build and deployment → Source → GitHub Actions**.
-3. Run the included **Deploy portfolio to GitHub Pages** workflow, or push another commit. The workflow shows your published URL.
+- `index.html`: public copy, four project cards, three featured video links and eleven library cards. All eight supplied YouTube links and ten supplied LinkedIn links are retained across the page.
+- `styles.css`: monochrome palette, serif headings, responsive layouts and grayscale image presentation. Original bundled image files retain their colour.
+- `script.js`: accessible Everything / Videos / Posts filtering and configurable introduction link.
+- `site-config.js`: introduction-video URL. Update the corresponding featured-video image and its linked card in index.html if changing the video.
+- `assets/media/`: real supplied-video thumbnails, LinkedIn previews, the public Sensei screenshot and an existing screenshot of Marc’s Teleprompter app.
+- `media-sources.json`: media provenance. A generic LinkedIn logo preview was deliberately excluded.
 
-You can also use **Deploy from a branch → main → /(root)** instead of the included workflow.
+The Teleprompter repository is private, so the page includes its screenshot and description without linking to its repository. No confidential company materials, private event access details or referral information are included. Some OpenAI posts are explicitly identified as shared updates. The upcoming November 2026 workshop remains labelled planned with estimated attendance. Cutmap is first place; Sensei is second place.
 
-## Add the introduction video later
+## Local preview
 
-Edit `site-config.js` and set `introVideoUrl` to your shareable HTTPS video link. The page automatically reveals the introduction section. Until then, there is no empty video box on the public page. Videos are linked, not embedded, so players do not load until someone visits the video service.
+From this folder, run `python3 -m http.server 8322 --bind 127.0.0.1` and open http://127.0.0.1:8322/.
 
-## Custom domain: doyouknowmarc.com
+## Deployment
 
-The custom domain is assigned to this repository in GitHub Pages. Cloudflare DNS has four apex A records for GitHub Pages and a DNS-only `www` CNAME pointing to `doyouknowmarc.github.io`. The existing Cutmap record remains separate. The previous GitHub Pages domain assignment on `doyouknowmarc/home` was removed.
+Push to `main`. The included `.github/workflows/pages.yml` deploys through GitHub Pages. Source must remain at the repository root, with index.html alongside styles.css and assets/.
 
-This repository uses a GitHub Actions publishing workflow. The custom-domain setting is managed in GitHub Pages settings; a CNAME file is not required for this publishing mode.
+The custom domain is configured in GitHub Pages settings. Cloudflare has four DNS-only apex A records pointing to GitHub Pages and a DNS-only www CNAME to doyouknowmarc.github.io. HTTPS certificate issuance was verified and HTTPS enforcement enabled. This Actions-based deployment does not require a CNAME file.
 
-## Preview locally
+## Media and privacy
 
-From this folder:
-
-```sh
-python3 -m http.server 8322 --bind 127.0.0.1
-```
-
-Visit http://127.0.0.1:8322/.
-
-## Editing
-
-- `index.html`: all public copy, projects, experience and links.
-- `styles.css`: colours, layout and responsive styles.
-- `site-config.js`: optional introduction-video URL.
-- `script.js`: shows the video section for a valid HTTPS link.
-
-Fonts use Google Fonts with local system-font fallbacks. There is no analytics, contact form, account system or cookie storage.
-
-## Content notes
-
-Content is based on Marc's descriptions and supplied links. The HK Connect LinkedIn post and Sensei repository were accessible during preparation; not every linked video or post was independently reviewed. Generic video labels intentionally avoid guessing video contents. Awards are correctly attributed: **Cutmap first place; Sensei second place**. The Doxis AI Ambassador Award is an internal company award.
-
-The November 2026 workshop is marked as planned, with estimated attendance. Update that description after the event. The website-builder pipeline is marked offline. Private event credentials, referral details, internal materials and application drafts are excluded from this public folder.
-
-The supplied portrait is bundled at `assets/marc-portrait.png` and displayed in the hero section. Check any public-site legal disclosure requirements applicable to your use before publishing as a commercial site.
+Images are bundled locally; visitors do not contact YouTube or LinkedIn to load previews. Videos and posts open only when a visitor follows a link. There are no autoplay players. Image alt text, reduced-motion preferences, keyboard focus and filter status announcements are included. No external account, cookie or third-party script is required to view the portfolio.
