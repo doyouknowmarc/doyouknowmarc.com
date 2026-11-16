@@ -1,11 +1,5 @@
 [
   {
-    "file": "assets/media/Qch5L8fkPJA.jpg",
-    "source_page": "https://www.youtube.com/watch?v=Qch5L8fkPJA",
-    "source_image": "https://i.ytimg.com/vi/Qch5L8fkPJA/hqdefault.jpg",
-    "type": "video"
-  },
-  {
     "file": "assets/media/ZM6tgfBMh6U.jpg",
     "source_page": "https://www.youtube.com/watch?v=ZM6tgfBMh6U",
     "source_image": "https://i.ytimg.com/vi/ZM6tgfBMh6U/hqdefault.jpg",
@@ -105,5 +99,47 @@
     "file": "assets/media/teleprompter.png",
     "source_page": null,
     "type": "existing local screenshot of Marc’s own app, provided project; no private repository URL published"
+  },
+  {
+    "file": "assets/media/marc-comics.jpg",
+    "source_page": "https://www.kaggle.com/competitions/banana/writeups/marc-make-abbreviations-rememberable-with-comics",
+    "notes": "Panel from Marc’s own Kaggle writeup gallery (CC BY 4.0), rendered at 1080×608",
+    "type": "screenshot"
+  },
+  {
+    "file": "assets/media/write.jpg",
+    "source_page": "https://write.doyouknowmarc.com/",
+    "notes": "Screenshot of the live landing page, 1440×873, scaled to 1200 wide",
+    "type": "screenshot"
+  },
+  {
+    "file": "assets/media/audio-cut.jpg",
+    "source_page": "https://audio.doyouknowmarc.com/",
+    "notes": "Screenshot of the live app, 1440×873, scaled to 1200 wide",
+    "type": "screenshot"
+  },
+  {
+    "file": "assets/media/shortspilot.jpg",
+    "source_page": "https://shorts-studio.doyouknowmarc.com/",
+    "notes": "Screenshot of the live landing page, 1440×873, scaled to 1200 wide",
+    "type": "screenshot"
+  },
+  {
+    "file": "assets/media/typing-on-top.jpg",
+    "source_page": "https://typingontop.doyouknowmarc.com/",
+    "notes": "Screenshot of the live landing page, 1440×873, scaled to 1200 wide",
+    "type": "screenshot"
+  },
+  {
+    "file": "assets/media/talking-on-top.jpg",
+    "source_page": "https://talkingontop.doyouknowmarc.com/",
+    "notes": "Screenshot of the landing page build (the live page is password-protected), 1440×873, scaled to 1200 wide",
+    "type": "screenshot"
+  },
+  {
+    "file": "assets/media/souls.jpg",
+    "source_page": "https://souls.doyouknowmarc.com/",
+    "notes": "Screenshot of the live app, 1440×873, scaled to 1200 wide",
+    "type": "screenshot"
   }
 ]

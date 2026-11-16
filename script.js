@@ -3,7 +3,8 @@ const introUrl = window.MARC_SITE?.introVideoUrl?.trim();
 if (introUrl) {
   try {
     const url = new URL(introUrl);
-    if (url.protocol === 'https:') document.getElementById('intro-video-link').href = url.href;
+    const link = document.getElementById('intro-video-link');
+    if (link && url.protocol === 'https:') link.href = url.href;
   } catch { /* Keep the existing working introduction link. */ }
 }
 const filters = [...document.querySelectorAll('[data-filter]')];

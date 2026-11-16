@@ -1,5 +1,4 @@
-// Add your uploaded video URL here. The introduction section stays hidden until then.
-// Use a link that anyone with the link can view (for example an unlisted YouTube video).
+// Site settings. introVideoUrl: a short introduction video for a hero button (none at the moment).
 window.MARC_SITE = {
-  introVideoUrl: "https://youtu.be/Qch5L8fkPJA"
+  introVideoUrl: ""
 };

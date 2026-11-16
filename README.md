@@ -7,10 +7,10 @@ A minimal black-and-white portfolio with real project imagery, talk and video pr
 
 ## Content
 
-- `index.html`: public copy, four project cards, three featured video links and eleven library cards. All eight supplied YouTube links and ten supplied LinkedIn links are retained across the page.
+- `index.html`: public copy, ten project cards (the four originals plus Write, Audio Cut, ShortsPilot, Typing on Top, Talking on Top and Souls, each with a screenshot of its live page), the featured talks with the MARC hackathon demo beside them, and eleven library cards.
 - `styles.css`: monochrome palette, serif headings, responsive layouts and grayscale image presentation. Original bundled image files retain their colour, which is revealed on card hover and keyboard focus.
-- `script.js`: accessible Everything / Videos / Posts filtering and configurable introduction link.
-- `site-config.js`: introduction-video URL. Update the corresponding featured-video image and its linked card in index.html if changing the video.
+- `script.js`: accessible Everything / Videos / Posts filtering, and an optional hero introduction link.
+- `site-config.js`: introduction-video URL, empty for now (the hero button was removed with the Codex Ambassador video). To bring it back, add the button with `id="intro-video-link"` to the hero and set the URL.
 - `assets/media/`: real supplied-video thumbnails, LinkedIn previews, the public Sensei screenshot and an existing screenshot of Marc’s Teleprompter app.
 - `media-sources.json`: media provenance. A generic LinkedIn logo preview was deliberately excluded.
 
