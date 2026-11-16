@@ -141,5 +141,17 @@
     "source_page": "https://souls.doyouknowmarc.com/",
     "notes": "Screenshot of the live app, 1440×873, scaled to 1200 wide",
     "type": "screenshot"
+  },
+  {
+    "file": "assets/media/webcompare.jpg",
+    "source_page": "https://webcompare.doyouknowmarc.com/",
+    "notes": "Screenshot of the live app comparing medtests.de and doyouknowmarc.com, 1440×873, scaled to 1200 wide",
+    "type": "screenshot"
+  },
+  {
+    "file": "assets/media/consentkit.jpg",
+    "source_page": "https://consentkit.doyouknowmarc.com/",
+    "notes": "Screenshot of the live demo page, 1440×873, scaled to 1200 wide",
+    "type": "screenshot"
   }
 ]
