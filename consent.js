@@ -22,7 +22,7 @@ Consent.init({
     reject: 'Only necessary',
     preferences: 'Settings',
     modalTitle: 'Privacy settings',
-    modalDescription: 'Choose what this site may load. You can change this any time with “Privacy settings” at the bottom of the page.',
+    modalDescription: 'Choose what this site may load. You can change this any time with “Privacy settings” at the bottom of the page. Built with <a href="https://consentkit.doyouknowmarc.com/">ConsentKit</a>.',
     rejectAll: 'Only necessary',
     categories: {
       necessary: {

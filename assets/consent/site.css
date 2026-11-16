@@ -15,3 +15,4 @@
 .footer .linklike:hover{text-decoration:underline;text-underline-offset:4px}
 .yt-frame .ck-youtube__actions .ck-button{background:#fff;color:#111;border-color:#fff}
 .yt-frame .ck-youtube__link{background:transparent!important;color:#fff!important;border-color:rgba(255,255,255,.6)!important}
+.ck-modal a{color:inherit;text-decoration:underline;text-underline-offset:3px}
