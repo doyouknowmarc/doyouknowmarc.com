@@ -7,7 +7,7 @@ A minimal black-and-white portfolio with real project imagery, talk and video pr
 
 ## Content
 
-- `index.html`: public copy, twelve project cards (the four originals plus Write, Audio Cut, ShortsPilot, Typing on Top, Talking on Top, Souls, WebCompare and ConsentKit, each with a screenshot of its live page), the featured talks with the MARC hackathon demo beside them, and eleven library cards.
+- `index.html`: public copy, thirteen project cards (the four originals plus Write, Audio Cut, ShortsPilot, Typing on Top, Talking on Top, Souls, WebCompare, ConsentKit and OwnYourName, each with a screenshot of its live page), the featured talks with the MARC hackathon demo beside them, and eleven library cards.
 - `styles.css`: monochrome palette, serif headings, responsive layouts and grayscale image presentation. Original bundled image files retain their colour, which is revealed on card hover and keyboard focus.
 - `script.js`: accessible Everything / Videos / Posts filtering, and an optional hero introduction link.
 - `site-config.js`: introduction-video URL, empty for now (the hero button was removed with the Codex Ambassador video). To bring it back, add the button with `id="intro-video-link"` to the hero and set the URL.

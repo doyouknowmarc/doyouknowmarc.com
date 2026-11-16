@@ -153,5 +153,11 @@
     "source_page": "https://consentkit.doyouknowmarc.com/",
     "notes": "Screenshot of the live demo page, 1440×873, scaled to 1200 wide",
     "type": "screenshot"
+  },
+  {
+    "file": "assets/media/knowledge-panel-studio.jpg",
+    "source_page": "https://panel.doyouknowmarc.com/",
+    "notes": "Screenshot of the live page with Marc’s sample panel, 1440×873, scaled to 1200 wide",
+    "type": "screenshot"
   }
 ]
