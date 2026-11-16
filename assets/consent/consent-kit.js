@@ -143,32 +143,48 @@ function d(e, t) {
 		timestamp: n.timestamp
 	};
 }
-function f(e) {
-	let t = e.storageKey ?? "site-consent", n = l().getItem(t);
+function f(e, t) {
+	let n = e.replace(/^\./, ""), r = typeof location < "u" ? location.hostname : "", i = r === n || r.endsWith("." + n) ? `; Domain=${n}` : "", a = typeof location < "u" && location.protocol === "https:" ? "; Secure" : "", o = (e, t, n) => {
+		document.cookie = `${encodeURIComponent(e)}=${encodeURIComponent(t)}${i}; Path=/; Max-Age=${n}; SameSite=Lax${a}`;
+	};
+	return {
+		getItem: (e) => {
+			let t = encodeURIComponent(e) + "=", n = document.cookie.split("; ").find((e) => e.startsWith(t));
+			return n ? decodeURIComponent(n.slice(t.length)) : null;
+		},
+		setItem: (e, n) => o(e, n, Math.round(t * 86400)),
+		removeItem: (e) => o(e, "", 0)
+	};
+}
+function p(e) {
+	return e.cookieDomain && typeof document < "u" ? f(e.cookieDomain, e.expirationDays ?? 180) : l();
+}
+function m(e) {
+	let t = e.storageKey ?? "site-consent", n = p(e).getItem(t);
 	if (!n) return null;
 	try {
 		let t = d(JSON.parse(n), e.version);
-		return !t || h(t, e.expirationDays ?? 180) ? null : t;
+		return !t || _(t, e.expirationDays ?? 180) ? null : t;
 	} catch {
 		return null;
 	}
 }
-function p(e, t) {
-	l().setItem(e.storageKey ?? "site-consent", JSON.stringify(t));
-}
-function m(e) {
-	l().removeItem(e.storageKey ?? "site-consent");
-}
 function h(e, t) {
+	p(e).setItem(e.storageKey ?? "site-consent", JSON.stringify(t));
+}
+function g(e) {
+	p(e).removeItem(e.storageKey ?? "site-consent");
+}
+function _(e, t) {
 	let n = Date.parse(e.timestamp);
 	return Number.isNaN(n) ? !0 : Date.now() - n > t * 24 * 60 * 60 * 1e3;
 }
 //#endregion
 //#region src/consent/modal.ts
-var g = null;
-function _(e, t, n, r = o) {
+var v = null;
+function y(e, t, n, r = o) {
 	if (typeof document > "u") return null;
-	v(), g = document.activeElement;
+	b(), v = document.activeElement;
 	let i = document.createElement("div");
 	return i.className = "ck-modal", i.setAttribute("role", "dialog"), i.setAttribute("aria-modal", "true"), i.setAttribute("aria-labelledby", "ck-modal-title"), i.innerHTML = `
     <div class="ck-modal__backdrop" data-ck-close></div>
@@ -181,8 +197,8 @@ function _(e, t, n, r = o) {
         <button class="ck-icon-button" type="button" aria-label="${e.close}" data-ck-close>×</button>
       </header>
       <div class="ck-modal__body">
-        ${y("necessary", e, t.necessary, !0)}
-        ${r.map((n) => y(n, e, t[n], !1)).join("")}
+        ${x("necessary", e, t.necessary, !0)}
+        ${r.map((n) => x(n, e, t[n], !1)).join("")}
       </div>
       <footer class="ck-modal__footer">
         <button type="button" class="ck-button ck-button--secondary" data-ck-reject-all>${e.rejectAll}</button>
@@ -190,16 +206,16 @@ function _(e, t, n, r = o) {
         <button type="submit" class="ck-button ck-button--primary">${e.save}</button>
       </footer>
     </form>
-  `, i.addEventListener("keydown", (e) => b(e, i)), i.querySelectorAll("[data-ck-close]").forEach((e) => e.addEventListener("click", v)), i.querySelector("[data-ck-accept-all]")?.addEventListener("click", n.onAcceptAll), i.querySelector("[data-ck-reject-all]")?.addEventListener("click", n.onRejectAll), i.querySelector("form")?.addEventListener("submit", (e) => {
+  `, i.addEventListener("keydown", (e) => S(e, i)), i.querySelectorAll("[data-ck-close]").forEach((e) => e.addEventListener("click", b)), i.querySelector("[data-ck-accept-all]")?.addEventListener("click", n.onAcceptAll), i.querySelector("[data-ck-reject-all]")?.addEventListener("click", n.onRejectAll), i.querySelector("form")?.addEventListener("submit", (e) => {
 		e.preventDefault();
 		let t = Object.fromEntries(o.map((e) => [e, i.querySelector(`input[name="${e}"]`)?.checked === !0]));
 		n.onSave(t);
 	}), document.body.append(i), queueMicrotask(() => i.querySelector("button, input")?.focus()), i;
 }
-function v() {
-	typeof document > "u" || (document.querySelector(".ck-modal")?.remove(), g instanceof HTMLElement && g.focus());
+function b() {
+	typeof document > "u" || (document.querySelector(".ck-modal")?.remove(), v instanceof HTMLElement && v.focus());
 }
-function y(e, t, n, r) {
+function x(e, t, n, r) {
 	let i = t.categories[e];
 	return `
     <label class="ck-category ${r ? "ck-category--locked" : ""}">
@@ -211,9 +227,9 @@ function y(e, t, n, r) {
     </label>
   `;
 }
-function b(e, t) {
+function S(e, t) {
 	if (e.key === "Escape") {
-		v();
+		b();
 		return;
 	}
 	if (e.key !== "Tab") return;
@@ -222,7 +238,7 @@ function b(e, t) {
 }
 //#endregion
 //#region src/consent/script-loader.ts
-function x(e, t = {}) {
+function C(e, t = {}) {
 	if (typeof document > "u") return Promise.reject(/* @__PURE__ */ Error("Cannot load scripts outside a browser document."));
 	if (t.id) {
 		let e = document.getElementById(t.id);
@@ -233,7 +249,7 @@ function x(e, t = {}) {
 		i.src = e, i.async = t.async ?? !0, i.defer = t.defer ?? !1, t.id && (i.id = t.id), Object.entries(t.attributes ?? {}).forEach(([e, t]) => i.setAttribute(e, t)), i.addEventListener("load", () => n(i), { once: !0 }), i.addEventListener("error", () => r(/* @__PURE__ */ Error(`Failed to load ${e}`)), { once: !0 }), document.head.append(i);
 	});
 }
-function S(e) {
+function w(e) {
 	typeof document > "u" || document.querySelectorAll("script[type=\"text/plain\"][data-consent]").forEach((t) => {
 		let n = t.dataset.consent;
 		if (!n || !e(n) || t.dataset.consentActivated === "true") return;
@@ -244,7 +260,7 @@ function S(e) {
 }
 //#endregion
 //#region src/consent/google-consent-mode.ts
-function C(e, t = "update") {
+function T(e, t = "update") {
 	typeof window > "u" || (window.dataLayer = window.dataLayer ?? [], window.gtag = window.gtag ?? function(...e) {
 		window.dataLayer?.push(e);
 	}, window.gtag("consent", t, {
@@ -256,23 +272,23 @@ function C(e, t = "update") {
 }
 //#endregion
 //#region src/consent/youtube.ts
-function w(e) {
-	typeof document > "u" || (T(), document.querySelectorAll(".ck-youtube").forEach((t) => {
-		let n = k(t);
+function E(e) {
+	typeof document > "u" || (D(), document.querySelectorAll(".ck-youtube").forEach((t) => {
+		let n = j(t);
 		if (n) {
 			if (t.dataset.videoId = n, e.hasConsent()) {
-				D(t);
+				k(t);
 				return;
 			}
 			if (t.querySelector("iframe")) {
-				E(t, e);
+				O(t, e);
 				return;
 			}
-			t.dataset.enhanced !== "true" && E(t, e);
+			t.dataset.enhanced !== "true" && O(t, e);
 		}
 	}));
 }
-function T() {
+function D() {
 	typeof document > "u" || document.querySelectorAll("iframe[src*=\"youtube.com/embed/\"], iframe[src*=\"youtube-nocookie.com/embed/\"]").forEach((e) => {
 		if (e.dataset.consentConverted === "true") return;
 		let t = e.src.match(/embed\/([^?&]+)/)?.[1];
@@ -281,41 +297,41 @@ function T() {
 		n.className = "ck-youtube", n.dataset.videoId = t, n.dataset.title = e.title || "YouTube video", n.dataset.consentConverted = "true", e.replaceWith(n);
 	});
 }
-function E(e, t) {
+function O(e, t) {
 	if (e.dataset.enhanced = "true", t.hasConsent()) {
-		D(e);
+		k(e);
 		return;
 	}
-	let n = e.dataset.title ?? "YouTube video", r = k(e);
+	let n = e.dataset.title ?? "YouTube video", r = j(e);
 	if (!r) return;
 	e.dataset.videoId = r;
 	let i = e.dataset.thumbnail, a = e.dataset.youtubeUrl ?? `https://www.youtube.com/watch?v=${r}`;
 	e.innerHTML = `
-    <div class="ck-youtube__thumb"${i ? ` style="background-image: url('${A(i)}')"` : ""}></div>
+    <div class="ck-youtube__thumb"${i ? ` style="background-image: url('${M(i)}')"` : ""}></div>
     <div class="ck-youtube__overlay">
-      <button class="ck-youtube__play" type="button" data-ck-play aria-label="Load ${A(n)}">
+      <button class="ck-youtube__play" type="button" data-ck-play aria-label="Load ${M(n)}">
         <span class="ck-youtube__play-icon" aria-hidden="true"></span>
       </button>
       <p>${t.dictionary.youtubeMessage}</p>
       <div class="ck-youtube__actions">
         <button class="ck-button ck-button--secondary" type="button" data-ck-allow-once>${t.dictionary.allowOnce}</button>
         <button class="ck-button ck-button--primary" type="button" data-ck-always-allow>${t.dictionary.alwaysAllow}</button>
-        <a class="ck-button ck-button--ghost ck-youtube__link" href="${A(a)}" target="_blank" rel="noopener noreferrer">${t.dictionary.openOnYouTube}</a>
+        <a class="ck-button ck-button--ghost ck-youtube__link" href="${M(a)}" target="_blank" rel="noopener noreferrer">${t.dictionary.openOnYouTube}</a>
       </div>
     </div>
-  `, e.querySelector("[data-ck-play]")?.addEventListener("click", () => D(e)), e.querySelector("[data-ck-allow-once]")?.addEventListener("click", () => D(e)), e.querySelector("[data-ck-always-allow]")?.addEventListener("click", () => {
-		t.grantPersistentConsent(), D(e);
+  `, e.querySelector("[data-ck-play]")?.addEventListener("click", () => k(e)), e.querySelector("[data-ck-allow-once]")?.addEventListener("click", () => k(e)), e.querySelector("[data-ck-always-allow]")?.addEventListener("click", () => {
+		t.grantPersistentConsent(), k(e);
 	});
 }
-function D(e) {
+function k(e) {
 	if (e.querySelector("iframe")) return;
-	let t = k(e);
+	let t = j(e);
 	if (!t) return;
 	e.dataset.videoId = t;
 	let n = e.dataset.title ?? "YouTube video", r = document.createElement("iframe");
 	r.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(t)}?autoplay=1&rel=0`, r.title = n, r.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share", r.allowFullscreen = !0, r.loading = "lazy", r.referrerPolicy = "strict-origin-when-cross-origin", e.replaceChildren(r), e.classList.add("ck-youtube--loaded");
 }
-function O(e) {
+function A(e) {
 	try {
 		let t = new URL(e);
 		if (t.hostname === "youtu.be") return t.pathname.split("/").filter(Boolean)[0] ?? null;
@@ -331,29 +347,29 @@ function O(e) {
 	}
 	return null;
 }
-function k(e) {
-	return e.dataset.videoId ?? (e.dataset.youtubeUrl ? O(e.dataset.youtubeUrl) : null);
+function j(e) {
+	return e.dataset.videoId ?? (e.dataset.youtubeUrl ? A(e.dataset.youtubeUrl) : null);
 }
-function A(e) {
+function M(e) {
 	return e.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;");
 }
 //#endregion
 //#region src/consent/consent.ts
-var j = {
+var N = {
 	analytics: !0,
 	marketing: !0,
 	externalMedia: !0
-}, M = class {
+}, P = class {
 	config;
 	state;
 	listeners = /* @__PURE__ */ new Set();
 	waitingCallbacks = /* @__PURE__ */ new Map();
 	initialized = !1;
 	constructor(e) {
-		this.config = this.normalizeConfig(e), this.state = f(this.config) ?? u(this.config);
+		this.config = this.normalizeConfig(e), this.state = m(this.config) ?? u(this.config);
 	}
 	init(e) {
-		return e && (this.config = this.normalizeConfig(e), this.state = f(this.config) ?? u(this.config)), this.initialized || typeof document > "u" ? this : (this.initialized = !0, this.config.googleConsentMode && C(this.state, "default"), this.injectFooterLink(), this.runAllowedIntegrations(), !f(this.config) && this.config.autoShowBanner && this.showBanner(), this);
+		return e && (this.config = this.normalizeConfig(e), this.state = m(this.config) ?? u(this.config)), this.initialized || typeof document > "u" ? this : (this.initialized = !0, this.config.googleConsentMode && T(this.state, "default"), this.injectFooterLink(), this.runAllowedIntegrations(), !m(this.config) && this.config.autoShowBanner && this.showBanner(), this);
 	}
 	get() {
 		return { ...this.state };
@@ -384,10 +400,10 @@ var j = {
 			marketing: this.isCategoryEnabled("marketing") ? e.marketing ?? this.state.marketing : !1,
 			externalMedia: this.isCategoryEnabled("externalMedia") ? e.externalMedia ?? this.state.externalMedia : !1
 		});
-		return this.state = r, p(this.config, r), t(), v(), this.notify(n), this.runAllowedIntegrations(), this.get();
+		return this.state = r, h(this.config, r), t(), b(), this.notify(n), this.runAllowedIntegrations(), this.get();
 	}
 	openPreferences() {
-		_(r(this.config.locale, this.config.translations), this.state, {
+		y(r(this.config.locale, this.config.translations), this.state, {
 			onSave: (e) => this.save(e),
 			onAcceptAll: () => this.acceptAll(),
 			onRejectAll: () => this.rejectAll()
@@ -397,7 +413,7 @@ var j = {
 		this.runAllowedIntegrations();
 	}
 	reset() {
-		m(this.config), this.state = u(this.config), v(), this.notify(), this.runAllowedIntegrations(), this.config.autoShowBanner && this.showBanner();
+		g(this.config), this.state = u(this.config), b(), this.notify(), this.runAllowedIntegrations(), this.config.autoShowBanner && this.showBanner();
 	}
 	onChange(e) {
 		return this.listeners.add(e), () => this.listeners.delete(e);
@@ -408,7 +424,7 @@ var j = {
 		return n.add(t), this.waitingCallbacks.set(e, n), () => n.delete(t);
 	}
 	loadScriptIfConsent(e, t, n) {
-		return this.has(e) ? x(t, n) : Promise.resolve(null);
+		return this.has(e) ? C(t, n) : Promise.resolve(null);
 	}
 	showBanner() {
 		e(r(this.config.locale, this.config.translations), {
@@ -418,7 +434,7 @@ var j = {
 		});
 	}
 	runAllowedIntegrations() {
-		this.config.googleConsentMode && C(this.state), this.config.autoBlockScripts && S((e) => this.has(e)), this.flushCallbacks(), this.config.autoEnhanceYouTube && w({
+		this.config.googleConsentMode && T(this.state), this.config.autoBlockScripts && w((e) => this.has(e)), this.flushCallbacks(), this.config.autoEnhanceYouTube && E({
 			hasConsent: () => this.has("externalMedia"),
 			grantPersistentConsent: () => this.setCategory("externalMedia", !0),
 			dictionary: r(this.config.locale, this.config.translations)
@@ -446,7 +462,7 @@ var j = {
 		e.type = "button", e.className = "ck-footer-link", e.dataset.ckFooterLink = "true", e.textContent = r(this.config.locale, this.config.translations).cookieSettings, e.dataset.ckBound = "true", e.addEventListener("click", () => this.openPreferences()), document.body.append(e);
 	}
 	isCategoryEnabled(e) {
-		return (this.config.categories ?? j)[e] !== !1;
+		return (this.config.categories ?? N)[e] !== !1;
 	}
 	normalizeConfig(e) {
 		return {
@@ -455,7 +471,7 @@ var j = {
 			locale: e.locale ?? "en",
 			storageKey: e.storageKey ?? "site-consent",
 			categories: {
-				...j,
+				...N,
 				...e.categories
 			},
 			autoShowBanner: e.autoShowBanner ?? !0,
@@ -465,9 +481,9 @@ var j = {
 			googleConsentMode: e.googleConsentMode ?? !1
 		};
 	}
-}, N = new M({ version: 1 });
-function P(e) {
-	return new M(e);
+}, F = new P({ version: 1 });
+function I(e) {
+	return new P(e);
 }
 //#endregion
-export { s as ALL_CATEGORIES, N as Consent, M as ConsentController, a as DEFAULT_EXPIRATION_DAYS, i as DEFAULT_STORAGE_KEY, o as OPTIONAL_CATEGORIES, S as activateDeclarativeScripts, m as clearStoredConsent, T as convertYouTubeIframes, P as createConsent, u as createConsentState, w as enhanceYouTubePlaceholders, O as extractYouTubeVideoId, h as isExpired, x as loadScript, D as mountIframe, d as normalizeConsentState, f as readStoredConsent, p as writeStoredConsent };
+export { s as ALL_CATEGORIES, F as Consent, P as ConsentController, a as DEFAULT_EXPIRATION_DAYS, i as DEFAULT_STORAGE_KEY, o as OPTIONAL_CATEGORIES, w as activateDeclarativeScripts, g as clearStoredConsent, D as convertYouTubeIframes, f as cookieStorage, I as createConsent, u as createConsentState, E as enhanceYouTubePlaceholders, A as extractYouTubeVideoId, _ as isExpired, C as loadScript, k as mountIframe, d as normalizeConsentState, m as readStoredConsent, h as writeStoredConsent };

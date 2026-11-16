@@ -32,6 +32,15 @@ Images are bundled locally; visitors do not contact YouTube or LinkedIn to load 
 
 ## Privacy and consent
 
-The site has no analytics and no tracking. Video cards are links to YouTube with self-hosted thumbnails. `consent.js` (built on [ConsentKit](https://consentkit.doyouknowmarc.com/), files in `assets/consent/`) turns a click on a video card into an in-page player that only loads youtube-nocookie.com after the visitor allows YouTube (or picks "Play once"). The banner only shows on pages with video cards; "Privacy settings" in the footer reopens the choice. The choice is kept in `localStorage` (`dykm-consent`), no cookies.
+One privacy choice covers doyouknowmarc.com and every subdomain. `assets/consent/dykm-consent.js` (built on [ConsentKit](https://consentkit.doyouknowmarc.com/)) is loaded by this site and by the apps:
+
+```html
+<script type="module" src="https://doyouknowmarc.com/assets/consent/dykm-consent.js"></script>
+```
+
+- **Visit statistics:** Cloudflare Web Analytics, loaded only after consent. Cloudflare's automatic injection must stay off for the zone, or the beacon loads regardless.
+- **YouTube:** thumbnail links to YouTube open an in-page player; youtube-nocookie.com loads only after the visitor allows YouTube or picks "Play once". Thumbnails stay self-hosted.
+- The choice lives in one first-party cookie, `dykm-consent`, on `.doyouknowmarc.com` (one year). "Privacy settings" in the footer (or a small floating button on the apps) reopens it.
+- GitHub Pages serves the files with `Access-Control-Allow-Origin: *`, so subdomains can import them.
 
 To update ConsentKit: `npm run build` in the CookieBanner repo, then copy `dist/consent-kit.js` and `dist/consent-kit.css` to `assets/consent/`.

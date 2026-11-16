@@ -16,3 +16,6 @@
 .yt-frame .ck-youtube__actions .ck-button{background:#fff;color:#111;border-color:#fff}
 .yt-frame .ck-youtube__link{background:transparent!important;color:#fff!important;border-color:rgba(255,255,255,.6)!important}
 .ck-modal a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+/* floating "Privacy settings" button on pages without their own link (the apps) */
+.ck-footer-link{font-family:Arial,Helvetica,sans-serif;min-height:30px;padding:0 10px;font-size:11px;font-weight:600;opacity:.88;bottom:12px;right:12px}
+.ck-footer-link:hover{opacity:1;color:#111}
