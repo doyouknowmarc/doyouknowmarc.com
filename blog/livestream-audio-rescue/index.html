@@ -4,21 +4,87 @@
 <title>The audio was gone. The captions weren’t. — Marc Kroll</title>
 <meta name="description" content="Our meetup livestream had unusable audio, but live captions were burned into the video. How I read them back with OCR, cleaned them up with an LLM and re-voiced 70 minutes locally on a Mac.">
 <link rel="canonical" href="https://doyouknowmarc.com/blog/livestream-audio-rescue/"><meta property="og:url" content="https://doyouknowmarc.com/blog/livestream-audio-rescue/">
-<meta property="og:title" content="The audio was gone. The captions weren’t."><meta property="og:description" content="Rescuing a 70-minute meetup livestream by re-voicing its burned-in live captions."><meta property="og:type" content="article"><meta property="og:image" content="https://doyouknowmarc.com/assets/media/audio-rescue-03-compare.jpg">
+<meta name="author" content="Marc Kroll">
+<meta name="keywords" content="audio restoration, live captions, OCR, Apple Vision, Kokoro TTS, MLX, text to speech, livestream, ffmpeg, Claude Code, AI meetup">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:site_name" content="Marc Kroll"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="The audio was gone. The captions weren’t."><meta property="og:description" content="Rescuing a 70-minute meetup livestream by re-voicing its burned-in live captions. Before/after clip, write-up and open-source code."><meta property="og:type" content="article">
+<meta property="og:image" content="https://doyouknowmarc.com/assets/media/audio-rescue-social.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="The audio was gone. The captions weren’t. Caption: this entire Kweng Fur thing. Re-voiced: this entire Qwen thing.">
+<meta property="og:video" content="https://doyouknowmarc.com/assets/media/audio-rescue-after.mp4"><meta property="og:video:type" content="video/mp4"><meta property="og:video:width" content="1280"><meta property="og:video:height" content="720">
+<meta property="article:published_time" content="2026-11-19"><meta property="article:modified_time" content="2026-11-19"><meta property="article:author" content="https://www.linkedin.com/in/doyouknowmarc/"><meta property="article:tag" content="AI"><meta property="article:tag" content="Text to speech"><meta property="article:tag" content="OCR">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="The audio was gone. The captions weren’t."><meta name="twitter:description" content="Rescuing a 70-minute meetup livestream by re-voicing its burned-in live captions."><meta name="twitter:image" content="https://doyouknowmarc.com/assets/media/audio-rescue-social.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "@id": "https://doyouknowmarc.com/blog/livestream-audio-rescue/#post",
-  "url": "https://doyouknowmarc.com/blog/livestream-audio-rescue/",
-  "headline": "The audio was gone. The captions weren’t.",
-  "description": "Rescuing a 70-minute meetup livestream by re-voicing its burned-in live captions.",
-  "image": "https://doyouknowmarc.com/assets/media/audio-rescue-03-compare.jpg",
-  "datePublished": "2026-11-19",
-  "dateModified": "2026-11-19",
-  "inLanguage": "en",
-  "author": { "@id": "https://doyouknowmarc.com/#person" },
-  "isPartOf": { "@id": "https://doyouknowmarc.com/#website" }
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://doyouknowmarc.com/blog/livestream-audio-rescue/#post",
+      "url": "https://doyouknowmarc.com/blog/livestream-audio-rescue/",
+      "mainEntityOfPage": "https://doyouknowmarc.com/blog/livestream-audio-rescue/",
+      "headline": "The audio was gone. The captions weren’t.",
+      "description": "Rescuing a 70-minute meetup livestream by re-voicing its burned-in live captions: OCR with Apple Vision, LLM clean-up and Kokoro text-to-speech on MLX.",
+      "image": ["https://doyouknowmarc.com/assets/media/audio-rescue-social.jpg", "https://doyouknowmarc.com/assets/media/audio-rescue-03-compare.jpg"],
+      "datePublished": "2026-11-19",
+      "dateModified": "2026-11-19",
+      "inLanguage": "en",
+      "keywords": ["audio restoration", "live captions", "OCR", "Apple Vision", "Kokoro", "MLX", "text to speech", "livestream"],
+      "author": { "@id": "https://doyouknowmarc.com/#person" },
+      "publisher": { "@id": "https://doyouknowmarc.com/#person" },
+      "isPartOf": { "@id": "https://doyouknowmarc.com/#website" },
+      "about": { "@id": "https://doyouknowmarc.com/blog/livestream-audio-rescue/#talk" },
+      "mentions": [{ "@id": "https://doyouknowmarc.com/blog/livestream-audio-rescue/#martin" }, { "@id": "https://doyouknowmarc.com/blog/livestream-audio-rescue/#code" }],
+      "video": [{ "@id": "https://doyouknowmarc.com/blog/livestream-audio-rescue/#before" }, { "@id": "https://doyouknowmarc.com/blog/livestream-audio-rescue/#after" }]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://doyouknowmarc.com/blog/livestream-audio-rescue/#martin",
+      "name": "Martin Atrin",
+      "url": "https://martinatrin.com/",
+      "sameAs": ["https://martinatrin.com/", "https://www.linkedin.com/in/oh-damn/", "https://polygonface.com/"]
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://doyouknowmarc.com/blog/livestream-audio-rescue/#talk",
+      "name": "Agents at work: payments, models and machines",
+      "description": "Martin Atrin’s talk at the Polygonfaces AI Society meetup, livestreamed to YouTube.",
+      "url": "https://www.youtube.com/watch?v=Dng83kIb-BY",
+      "embedUrl": "https://www.youtube.com/embed/Dng83kIb-BY",
+      "thumbnailUrl": "https://i.ytimg.com/vi/Dng83kIb-BY/hqdefault.jpg",
+      "uploadDate": "2026-11-18",
+      "duration": "PT1H10M47S",
+      "creator": { "@id": "https://doyouknowmarc.com/blog/livestream-audio-rescue/#martin" }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://doyouknowmarc.com/blog/livestream-audio-rescue/#before",
+      "name": "Before: the original livestream audio (20 seconds)",
+      "description": "Twenty seconds of the original stream at 19:04. Both microphones were recorded and mixed, so the speech is unintelligible.",
+      "contentUrl": "https://doyouknowmarc.com/assets/media/audio-rescue-before.mp4",
+      "thumbnailUrl": "https://doyouknowmarc.com/assets/media/audio-rescue-before-after-poster.jpg",
+      "uploadDate": "2026-11-19",
+      "duration": "PT20S"
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://doyouknowmarc.com/blog/livestream-audio-rescue/#after",
+      "name": "After: re-voiced from the burned-in live captions (20 seconds)",
+      "description": "The same twenty seconds, re-voiced with Kokoro text-to-speech from OCR’d and cleaned-up live captions.",
+      "contentUrl": "https://doyouknowmarc.com/assets/media/audio-rescue-after.mp4",
+      "thumbnailUrl": "https://doyouknowmarc.com/assets/media/audio-rescue-before-after-poster.jpg",
+      "uploadDate": "2026-11-19",
+      "duration": "PT20S"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://doyouknowmarc.com/blog/livestream-audio-rescue/#code",
+      "name": "livestream-audio-rescue",
+      "codeRepository": "https://github.com/doyouknowmarc/livestream-audio-rescue",
+      "programmingLanguage": "Python",
+      "runtimePlatform": "macOS on Apple Silicon",
+      "author": { "@id": "https://doyouknowmarc.com/#person" }
+    }
+  ]
 }
 </script>
 <meta name="theme-color" content="#ffffff"><link rel="icon" href="../../favicon.ico" sizes="48x48"><link rel="icon" href="../../favicon-32.png" type="image/png" sizes="32x32"><link rel="icon" href="../../icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="../../apple-touch-icon.png"><link rel="stylesheet" href="../../styles.css">
@@ -48,6 +114,8 @@
 .post th,.post td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
 .post th{font-size:10px;letter-spacing:1.4px;font-weight:600;color:var(--muted)}
 .post .num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:14px}.ba video{width:100%;height:auto;display:block;border:1px solid var(--line);background:#000}.ba .lbl{font-size:10px;letter-spacing:1.4px;font-weight:600;color:var(--muted);margin-bottom:8px}.ba .lbl b{color:#111}
+@media(max-width:650px){.ba{grid-template-columns:1fr}}
 .callout{border-top:1px solid #111;border-bottom:1px solid var(--line);padding:22px 0;margin:36px 0}
 .callout .eyebrow{color:var(--muted);margin-bottom:8px}
 @media(max-width:1000px){.post figure.wide{margin-left:0;margin-right:0}}
@@ -61,14 +129,25 @@
   <p class="eyebrow">BUILDING IN PUBLIC · NOTES</p>
   <h1>The audio was gone. The captions weren’t.</h1>
   <p class="dek">We livestreamed a 70-minute meetup talk to YouTube, and the sound was unusable. But live captions were running at the bottom of every slide. So I read them back off the screen and gave the talk a new voice, on a single Mac.</p>
-  <p class="meta">19 November 2026 · Polygonfaces AI Society meetup · about 8 minutes to read</p>
+  <p class="meta">19 November 2026 · <a href="https://polygonface.com/">Polygonfaces AI Society</a> meetup · about 8 minutes to read · <a href="https://github.com/doyouknowmarc/livestream-audio-rescue">Code on GitHub ↗</a></p>
 
   <h2>The problem</h2>
-  <p>The talk was “Agents at work: payments, models and machines” by Martin Atrin at the Polygonfaces AI Society. The slides were great, the room was full and the stream ran. Afterwards we listened back. The voice sat roughly 2&nbsp;dB above the noise. You could tell someone was talking, but not what he was saying.</p>
+  <p>The talk was “Agents at work: payments, models and machines” by <a href="https://martinatrin.com/">Martin Atrin</a> (<a href="https://www.linkedin.com/in/oh-damn/">LinkedIn</a>) at the <a href="https://polygonface.com/">Polygonfaces AI Society</a>. The slides were great, the room was full and the stream ran. Afterwards we listened back.</p>
+  <p>What went wrong: both microphones in the room were recording at the same time, and the stream mixed them into one track. The two signals smeared over each other. The voice ended up roughly 2&nbsp;dB above the noise. You could tell someone was talking, but not what he was saying.</p>
   <p>One thing had worked perfectly: a live-caption bar along the bottom of the slides. Every word that was said, give or take the usual speech-recognition slips, was already in the video. It just wasn’t in the audio.</p>
   <figure>
     <img src="../../assets/media/audio-rescue-caption-bar.jpg" width="1600" height="100" alt="The live caption bar from the stream: an EN badge and the line “You Googled it, you needed to know a certain key…”" loading="lazy" decoding="async">
     <figcaption>The caption bar burned into the stream. This is the source for everything that follows.</figcaption>
+  </figure>
+
+  <h2>Before and after</h2>
+  <p>The same twenty seconds, at 19:04 in the talk. Turn the sound on.</p>
+  <figure class="wide">
+    <div class="ba">
+      <div><p class="lbl"><b>BEFORE</b> · ORIGINAL STREAM AUDIO</p><video controls preload="none" playsinline poster="../../assets/media/audio-rescue-before-after-poster.jpg" width="1280" height="720" src="../../assets/media/audio-rescue-before.mp4" aria-label="Before: 20 seconds of the original livestream audio"></video></div>
+      <div><p class="lbl"><b>AFTER</b> · RE-VOICED FROM THE CAPTIONS</p><video controls preload="none" playsinline poster="../../assets/media/audio-rescue-before-after-poster.jpg" width="1280" height="720" src="../../assets/media/audio-rescue-after.mp4" aria-label="After: the same 20 seconds, re-voiced from the live captions"></video></div>
+    </div>
+    <figcaption>Listen for the last sentence. The live caption says “this entire Kweng Fur thing”; the new voice says “this entire Qwen thing”.</figcaption>
   </figure>
 
   <h2>First, I tried to save the real voice</h2>
@@ -78,7 +157,7 @@
     <li>DeepFilterNet: the noise went, and the voice with it. Whisper heard “Thank you. Thank you. Thank you.”</li>
     <li>Demucs: hardly any change. Whisper heard “I am driving 193 reasons for driving…”</li>
   </ul>
-  <p>That settled it. The speech information simply isn’t in the recording, and no enhancer can bring back what the microphone never captured.</p>
+  <p>That settled it. The speech information simply isn’t in the recording any more. No enhancer can pull a voice back out of two microphones mixed into each other.</p>
 
   <h2>Plan B: read the screen</h2>
   <div class="pipeline" aria-label="Pipeline"><span>YouTube</span><i>→</i><span>crop caption bar</span><i>→</i><span>Apple Vision OCR</span><i>→</i><span>stitch</span><i>→</i><span>LLM polish</span><i>→</i><span>Kokoro TTS</span><i>→</i><span>fit to timeline</span><i>→</i><span>remux</span></div>
@@ -86,6 +165,7 @@
   <p><strong>Stitching.</strong> A live caption bar is a moving window. The line scrolls, starts with “…”, and words change while the speech recognizer is still deciding. I align each new state against the end of the transcript, let later versions overwrite words that were still being revised, and keep the time each word first appeared. Then I split the result into sentences.</p>
   <p><strong>Polish.</strong> The captions came from live speech recognition, so they contain their own mis-hearings: “vote in Nep poll”, “agenticommerce”, “Kweng Fur”. Headless Claude Code gets the sentences in batches of about forty, along with the talk’s title, speaker and topics. It returns the same items with fixed wording. Because the IDs are fixed, the timings can’t drift. “This entire Kweng Fur thing” became “this entire Qwen thing”.</p>
   <blockquote>The LLM fixes what it can recognise and guesses where it can’t. So the raw caption stays visible next to every polished line.</blockquote>
+  <p>Martin spotted one I missed. Someone in the audience said “you can do that on Grok bot”. The live caption heard “RPL”, and the polish step, with nothing to go on, turned it into “the app”. Grok bot comes up again later in the talk, so a second pass over the full transcript, with a list of names that appear in it, would very likely catch cases like this. It’s the obvious next improvement. For this video I left it as it is.</p>
   <p><strong>Voice.</strong> Kokoro-82M runs locally through MLX on Apple Silicon. After warm-up it renders about six seconds of speech in a third of a second. Each sentence gets the time until the next sentence starts. If the voice runs longer, the line is re-rendered faster, up to 1.25×. If it still doesn’t fit, the following lines wait for the next pause. There’s no lip-sync to worry about, because it’s slides.</p>
   <p><strong>Remux.</strong> ffmpeg keeps the picture, swaps the audio, normalises the loudness and adds the polished transcript as a subtitle track.</p>
 
@@ -145,7 +225,8 @@
 ./rescue.py "https://www.youtube.com/watch?v=…" --name meetup --height 720 \
   --context "talk title, speaker, product names"</code></pre>
   <p>The stack: yt-dlp and ffmpeg, Apple Vision through <code>ocrmac</code>, Claude Code for the polish, Kokoro on MLX through <code>mlx-audio</code>, and a small standard-library Python server for the UI. Everything except the polish step runs on the Mac.</p>
-  <p class="muted">The original stream is on <a href="https://www.youtube.com/watch?v=Dng83kIb-BY">YouTube ↗</a>.</p>
+  <p>The code is open source: <a href="https://github.com/doyouknowmarc/livestream-audio-rescue"><strong>doyouknowmarc/livestream-audio-rescue</strong> on GitHub ↗</a>. The README covers setup, the options, the review UI and how to adapt the caption crop to a different video.</p>
+  <p class="muted">The original stream is on <a href="https://www.youtube.com/watch?v=Dng83kIb-BY">YouTube ↗</a>. Thanks to <a href="https://martinatrin.com/">Martin Atrin</a> for the talk and for letting me use it here. Connect with him on <a href="https://www.linkedin.com/in/oh-damn/">LinkedIn</a>, and <a href="https://www.linkedin.com/in/doyouknowmarc/">with me</a> if you try this on your own recording.</p>
 </article>
 </main>
 <footer class="footer wrap"><a class="wordmark" href="../../">marc.</a><p>Marc Kroll · Vienna · German &amp; English</p><div><a href="https://www.linkedin.com/in/doyouknowmarc/" rel="me">LinkedIn ↗</a><a href="https://github.com/doyouknowmarc" rel="me">GitHub ↗</a><a href="https://www.youtube.com/@doyouknowmarc" rel="me">YouTube ↗</a><button class="linklike" type="button" data-ck-footer-link>Privacy settings</button></div></footer>

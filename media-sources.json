@@ -180,20 +180,44 @@
   },
   {
     "file": "assets/media/audio-rescue-03-compare.jpg",
-    "source_page": "local tool (not published)",
+    "source_page": "https://github.com/doyouknowmarc/livestream-audio-rescue",
     "notes": "Screenshot of Marc’s local audio-rescue tool, 2880×1800, scaled to 1600 wide",
     "type": "screenshot"
   },
   {
     "file": "assets/media/audio-rescue-04-edit-line.jpg",
-    "source_page": "local tool (not published)",
+    "source_page": "https://github.com/doyouknowmarc/livestream-audio-rescue",
     "notes": "Screenshot of Marc’s local audio-rescue tool, 2880×1800, scaled to 1600 wide",
     "type": "screenshot"
   },
   {
     "file": "assets/media/audio-rescue-05-full-job.jpg",
-    "source_page": "local tool (not published)",
+    "source_page": "https://github.com/doyouknowmarc/livestream-audio-rescue",
     "notes": "Screenshot of Marc’s local audio-rescue tool, 2880×1800, scaled to 1600 wide",
     "type": "screenshot"
+  },
+  {
+    "file": "assets/media/audio-rescue-before.mp4",
+    "source_page": "https://www.youtube.com/watch?v=Dng83kIb-BY",
+    "notes": "20 s (19:04–19:24) of the original livestream with its original audio, 720p",
+    "type": "video clip"
+  },
+  {
+    "file": "assets/media/audio-rescue-after.mp4",
+    "source_page": "https://www.youtube.com/watch?v=Dng83kIb-BY",
+    "notes": "Same 20 s, re-voiced with Kokoro TTS from the OCR'd live captions, 720p",
+    "type": "video clip"
+  },
+  {
+    "file": "assets/media/audio-rescue-before-after-poster.jpg",
+    "source_page": "https://www.youtube.com/watch?v=Dng83kIb-BY",
+    "notes": "Video frame at 19:16, poster for the before/after clips",
+    "type": "video frame"
+  },
+  {
+    "file": "assets/media/audio-rescue-social.jpg",
+    "source_page": "https://doyouknowmarc.com/blog/livestream-audio-rescue/",
+    "notes": "1200×630 share image: post title, caption fix example and a video frame at 19:16",
+    "type": "graphic"
   }
 ]
