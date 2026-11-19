@@ -159,5 +159,41 @@
     "source_page": "https://panel.doyouknowmarc.com/",
     "notes": "Screenshot of the live page with Marc’s sample panel, 1440×873, scaled to 1200 wide",
     "type": "screenshot"
+  },
+  {
+    "file": "assets/media/audio-rescue-card.jpg",
+    "source_page": "https://www.youtube.com/watch?v=Dng83kIb-BY",
+    "notes": "Frame of the meetup livestream at 0:30 (title slide with caption bar), 1280 wide",
+    "type": "video frame"
+  },
+  {
+    "file": "assets/media/audio-rescue-caption-bar.jpg",
+    "source_page": "https://www.youtube.com/watch?v=Dng83kIb-BY",
+    "notes": "Crop of the livestream caption bar at 10:00, 1600 wide",
+    "type": "video frame"
+  },
+  {
+    "file": "assets/media/audio-rescue-screen-share.jpg",
+    "source_page": "https://www.youtube.com/watch?v=Dng83kIb-BY",
+    "notes": "Frame of the livestream screen share at 66:16, 1280 wide",
+    "type": "video frame"
+  },
+  {
+    "file": "assets/media/audio-rescue-03-compare.jpg",
+    "source_page": "local tool (not published)",
+    "notes": "Screenshot of Marc’s local audio-rescue tool, 2880×1800, scaled to 1600 wide",
+    "type": "screenshot"
+  },
+  {
+    "file": "assets/media/audio-rescue-04-edit-line.jpg",
+    "source_page": "local tool (not published)",
+    "notes": "Screenshot of Marc’s local audio-rescue tool, 2880×1800, scaled to 1600 wide",
+    "type": "screenshot"
+  },
+  {
+    "file": "assets/media/audio-rescue-05-full-job.jpg",
+    "source_page": "local tool (not published)",
+    "notes": "Screenshot of Marc’s local audio-rescue tool, 2880×1800, scaled to 1600 wide",
+    "type": "screenshot"
   }
 ]
