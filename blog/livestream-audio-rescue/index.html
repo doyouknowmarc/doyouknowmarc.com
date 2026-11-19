@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The audio was gone. The captions weren’t. — Marc Kroll</title>
+<meta name="description" content="Our meetup livestream had unusable audio, but live captions were burned into the video. How I read them back with OCR, cleaned them up with an LLM and re-voiced 70 minutes locally on a Mac.">
+<link rel="canonical" href="https://doyouknowmarc.com/blog/livestream-audio-rescue/"><meta property="og:url" content="https://doyouknowmarc.com/blog/livestream-audio-rescue/">
+<meta property="og:title" content="The audio was gone. The captions weren’t."><meta property="og:description" content="Rescuing a 70-minute meetup livestream by re-voicing its burned-in live captions."><meta property="og:type" content="article"><meta property="og:image" content="https://doyouknowmarc.com/assets/media/audio-rescue-03-compare.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://doyouknowmarc.com/blog/livestream-audio-rescue/#post",
+  "url": "https://doyouknowmarc.com/blog/livestream-audio-rescue/",
+  "headline": "The audio was gone. The captions weren’t.",
+  "description": "Rescuing a 70-minute meetup livestream by re-voicing its burned-in live captions.",
+  "image": "https://doyouknowmarc.com/assets/media/audio-rescue-03-compare.jpg",
+  "datePublished": "2026-11-19",
+  "dateModified": "2026-11-19",
+  "inLanguage": "en",
+  "author": { "@id": "https://doyouknowmarc.com/#person" },
+  "isPartOf": { "@id": "https://doyouknowmarc.com/#website" }
+}
+</script>
+<meta name="theme-color" content="#ffffff"><link rel="icon" href="../../favicon.ico" sizes="48x48"><link rel="icon" href="../../favicon-32.png" type="image/png" sizes="32x32"><link rel="icon" href="../../icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="../../apple-touch-icon.png"><link rel="stylesheet" href="../../styles.css">
+<style>
+.post{max-width:720px;margin:0 auto;padding:70px 0 90px}
+.post h1{font-size:clamp(40px,5vw,64px);margin:10px 0 18px}
+.post .dek{font-size:18px;color:var(--muted);line-height:1.6;margin-bottom:12px}
+.post .meta{font-size:11px;color:var(--muted);letter-spacing:.3px;border-bottom:1px solid var(--line);padding-bottom:26px;margin-bottom:34px}
+.post h2{font-size:30px;letter-spacing:-1px;margin:52px 0 16px}
+.post p,.post li{font-size:16px;line-height:1.8}
+.post p+p{margin-top:16px}
+.post ul,.post ol{padding-left:20px;margin:16px 0}
+.post li+li{margin-top:6px}
+.post a{text-decoration:underline;text-underline-offset:4px}
+.post code{font-family:Menlo,Consolas,monospace;font-size:13px;background:var(--soft);padding:2px 5px}
+.post pre{background:#111;color:#eee;padding:18px 20px;overflow:auto;font-size:13px;line-height:1.6;margin:20px 0}
+.post pre code{background:none;padding:0;color:inherit}
+.post figure{margin:30px 0}
+.post figure.wide{margin-left:-120px;margin-right:-120px}
+.post figure img{width:100%;height:auto;display:block;border:1px solid var(--line)}
+.post figcaption{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.6}
+.post blockquote{margin:24px 0;padding:4px 0 4px 20px;border-left:2px solid #111;font-family:Georgia,serif;font-size:20px;line-height:1.5}
+.pipeline{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:22px 0;font-size:12px}
+.pipeline span{border:1px solid var(--line);padding:6px 10px}
+.pipeline i{font-style:normal;color:var(--muted)}
+.post table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
+.post th,.post td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.post th{font-size:10px;letter-spacing:1.4px;font-weight:600;color:var(--muted)}
+.post .num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.callout{border-top:1px solid #111;border-bottom:1px solid var(--line);padding:22px 0;margin:36px 0}
+.callout .eyebrow{color:var(--muted);margin-bottom:8px}
+@media(max-width:1000px){.post figure.wide{margin-left:0;margin-right:0}}
+@media(max-width:650px){.post{padding-top:40px}.post p,.post li{font-size:15px}.post h2{font-size:26px}}
+</style>
+<script type="module" src="../../assets/consent/dykm-consent.js"></script></head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header wrap"><a href="../../" class="wordmark" aria-label="Marc Kroll home">marc<span>.</span></a><nav aria-label="Main navigation"><a href="../../about/">About</a><a href="../../#work">Projects</a><a href="../../#watch">Watch &amp; read</a><a href="../../#community">Speaking &amp; workshops</a></nav><a class="button button-small" href="https://www.linkedin.com/in/doyouknowmarc/">Let’s connect ↗</a></header>
+<main id="main" class="wrap">
+<article class="post">
+  <p class="eyebrow">BUILDING IN PUBLIC · NOTES</p>
+  <h1>The audio was gone. The captions weren’t.</h1>
+  <p class="dek">We livestreamed a 70-minute meetup talk to YouTube, and the sound was unusable. But live captions were running at the bottom of every slide. So I read them back off the screen and gave the talk a new voice, on a single Mac.</p>
+  <p class="meta">19 November 2026 · Polygonfaces AI Society meetup · about 8 minutes to read</p>
+
+  <h2>The problem</h2>
+  <p>The talk was “Agents at work: payments, models and machines” by Martin Atrin at the Polygonfaces AI Society. The slides were great, the room was full and the stream ran. Afterwards we listened back. The voice sat roughly 2&nbsp;dB above the noise. You could tell someone was talking, but not what he was saying.</p>
+  <p>One thing had worked perfectly: a live-caption bar along the bottom of the slides. Every word that was said, give or take the usual speech-recognition slips, was already in the video. It just wasn’t in the audio.</p>
+  <figure>
+    <img src="../../assets/media/audio-rescue-caption-bar.jpg" width="1600" height="100" alt="The live caption bar from the stream: an EN badge and the line “You Googled it, you needed to know a certain key…”" loading="lazy" decoding="async">
+    <figcaption>The caption bar burned into the stream. This is the source for everything that follows.</figcaption>
+  </figure>
+
+  <h2>First, I tried to save the real voice</h2>
+  <p>Before re-voicing anyone, I tried to rescue the original audio on a five-minute sample. I used three local tools: DeepFilterNet, Demucs, and Demucs followed by DeepFilterNet. To judge the results objectively, not just by ear, I ran Whisper over each one.</p>
+  <ul>
+    <li>Original: Whisper hallucinated French fragments.</li>
+    <li>DeepFilterNet: the noise went, and the voice with it. Whisper heard “Thank you. Thank you. Thank you.”</li>
+    <li>Demucs: hardly any change. Whisper heard “I am driving 193 reasons for driving…”</li>
+  </ul>
+  <p>That settled it. The speech information simply isn’t in the recording, and no enhancer can bring back what the microphone never captured.</p>
+
+  <h2>Plan B: read the screen</h2>
+  <div class="pipeline" aria-label="Pipeline"><span>YouTube</span><i>→</i><span>crop caption bar</span><i>→</i><span>Apple Vision OCR</span><i>→</i><span>stitch</span><i>→</i><span>LLM polish</span><i>→</i><span>Kokoro TTS</span><i>→</i><span>fit to timeline</span><i>→</i><span>remux</span></div>
+  <p><strong>OCR.</strong> The caption bar is always in the same place, so I crop just that strip, sample it four times a second, skip frames where nothing changed, and read the text with <strong>Apple Vision</strong>, which is built into macOS. I had looked at a large OCR model, but for one crisp line of text, Vision is fast, free and nearly perfect. The only systematic slips were “Al” for “AI” and “I’II” for “I’ll”. Five minutes of video took 43 seconds.</p>
+  <p><strong>Stitching.</strong> A live caption bar is a moving window. The line scrolls, starts with “…”, and words change while the speech recognizer is still deciding. I align each new state against the end of the transcript, let later versions overwrite words that were still being revised, and keep the time each word first appeared. Then I split the result into sentences.</p>
+  <p><strong>Polish.</strong> The captions came from live speech recognition, so they contain their own mis-hearings: “vote in Nep poll”, “agenticommerce”, “Kweng Fur”. Headless Claude Code gets the sentences in batches of about forty, along with the talk’s title, speaker and topics. It returns the same items with fixed wording. Because the IDs are fixed, the timings can’t drift. “This entire Kweng Fur thing” became “this entire Qwen thing”.</p>
+  <blockquote>The LLM fixes what it can recognise and guesses where it can’t. So the raw caption stays visible next to every polished line.</blockquote>
+  <p><strong>Voice.</strong> Kokoro-82M runs locally through MLX on Apple Silicon. After warm-up it renders about six seconds of speech in a third of a second. Each sentence gets the time until the next sentence starts. If the voice runs longer, the line is re-rendered faster, up to 1.25×. If it still doesn’t fit, the following lines wait for the next pause. There’s no lip-sync to worry about, because it’s slides.</p>
+  <p><strong>Remux.</strong> ffmpeg keeps the picture, swaps the audio, normalises the loudness and adds the polished transcript as a subtitle track.</p>
+
+  <h2>A small UI to check the result</h2>
+  <p>Reading a JSON file is no way to judge a voice-over, so I built a small local page. It plays the original and the re-voiced version side by side, in sync, and you switch between them with one click. Under the players, every line shows the polished text, the raw caption it came from, and a speed tag where it had to be squeezed.</p>
+  <figure class="wide">
+    <img src="../../assets/media/audio-rescue-03-compare.jpg" width="1600" height="1000" alt="The comparison view: original and re-voiced players side by side above a transcript with raw captions and speed tags" loading="lazy" decoding="async">
+    <figcaption>Before and after, in sync. The highlighted line is the one playing now.</figcaption>
+  </figure>
+  <p>When a line is wrong, I fix it in place and click “Save edits &amp; re-voice”. Only the voice step runs again, which takes about 30 seconds for five minutes of video.</p>
+  <figure class="wide">
+    <img src="../../assets/media/audio-rescue-04-edit-line.jpg" width="1600" height="1000" alt="Editing a transcript line: the edited sentence is highlighted in yellow" loading="lazy" decoding="async">
+    <figcaption>Editing a line by hand. Changed text turns yellow until it’s re-voiced.</figcaption>
+  </figure>
+
+  <h2>The bug the sample didn’t show</h2>
+  <p>The five-minute sample looked great, so I ran the whole talk. The report came back with a maximum delay of <strong>58.7 seconds</strong>. On the sample it had been 3.6.</p>
+  <p>The cause: at around 66 minutes the stream switches to a screen share of a website. There’s no caption bar on screen, so the OCR read whatever page text scrolled through that strip: “Work email”, “Pro for thirty dollars”, “Cookie settings”. That gave twelve “sentences” in four seconds. Each one was voiced in full and pushed everything after it back.</p>
+  <figure>
+    <img src="../../assets/media/audio-rescue-screen-share.jpg" width="1280" height="720" alt="The screen-share segment: a product website in a browser, with no caption bar" loading="lazy" decoding="async">
+    <figcaption>No caption bar, but plenty of text for OCR to read.</figcaption>
+  </figure>
+  <p>The fix was cheap. The caption bar has a clear pixel signature: a white margin, the dark “EN” badge and a mostly bright text area. When all three are missing, that frame is skipped. On a normal caption clip the output stayed byte-for-byte the same, and the screen share was simply skipped.</p>
+  <table>
+    <thead><tr><th>FULL TALK</th><th>FIRST RUN</th><th>WITH BAR DETECTION</th></tr></thead>
+    <tbody>
+      <tr><td>Sentences voiced</td><td class="num">668</td><td class="num">650</td></tr>
+      <tr><td>Max delay vs. original timing</td><td class="num">58.7&nbsp;s</td><td class="num">3.6&nbsp;s</td></tr>
+      <tr><td>Median / 95th percentile delay</td><td class="num">—</td><td class="num">0.0&nbsp;s / 1.95&nbsp;s</td></tr>
+      <tr><td>Lines spoken faster (≤ 1.25×)</td><td class="num">306</td><td class="num">300</td></tr>
+    </tbody>
+  </table>
+  <p>The lesson: a sample tests the method, not the whole recording. And a single summary number caught what spot-listening would have missed.</p>
+
+  <h2>How long it takes</h2>
+  <p>For the full 71-minute talk at 720p, which is plenty for slides, starting from the downloaded video:</p>
+  <ul>
+    <li>OCR: about 10 minutes</li>
+    <li>Polish: about 4 minutes</li>
+    <li>Voice: about 4 minutes</li>
+    <li>Remux: about 1.5 minutes</li>
+  </ul>
+  <p>That’s roughly 20 minutes in total. Whisper run over the new narration repeats the polished transcript word for word.</p>
+  <figure class="wide">
+    <img src="../../assets/media/audio-rescue-05-full-job.jpg" width="1600" height="1000" alt="The finished full-length job: 650 lines, max delay 3.63 seconds, with the transcript around minute 19" loading="lazy" decoding="async">
+    <figcaption>The full talk: 650 lines. Note “Kweng Fur” in the caption and “Qwen” in the polished line.</figcaption>
+  </figure>
+
+  <div class="callout">
+    <p class="eyebrow">WHAT IT DOESN’T DO</p>
+    <p>No captions, no voice: the two live browser demos (about five and a half minutes) had no caption bar, so they stay silent. The new voice is a stock Kokoro voice, not Martin’s. Cloning his voice would need his consent, and for slides a clear narrator is enough. Some of the polish step’s readings of garbled captions are guesses, so the transcript deserves one human read before anything is published.</p>
+  </div>
+
+  <h2>Doing it again</h2>
+  <p>If this ever happens again, it’s one command. Every step is skipped when its output already exists, so fixing a line only re-runs the voice:</p>
+<pre><code>./setup.sh
+./rescue.py "https://www.youtube.com/watch?v=…" --name meetup --height 720 \
+  --context "talk title, speaker, product names"</code></pre>
+  <p>The stack: yt-dlp and ffmpeg, Apple Vision through <code>ocrmac</code>, Claude Code for the polish, Kokoro on MLX through <code>mlx-audio</code>, and a small standard-library Python server for the UI. Everything except the polish step runs on the Mac.</p>
+  <p class="muted">The original stream is on <a href="https://www.youtube.com/watch?v=Dng83kIb-BY">YouTube ↗</a>.</p>
+</article>
+</main>
+<footer class="footer wrap"><a class="wordmark" href="../../">marc.</a><p>Marc Kroll · Vienna · German &amp; English</p><div><a href="https://www.linkedin.com/in/doyouknowmarc/" rel="me">LinkedIn ↗</a><a href="https://github.com/doyouknowmarc" rel="me">GitHub ↗</a><a href="https://www.youtube.com/@doyouknowmarc" rel="me">YouTube ↗</a><button class="linklike" type="button" data-ck-footer-link>Privacy settings</button></div></footer>
+</body></html>
