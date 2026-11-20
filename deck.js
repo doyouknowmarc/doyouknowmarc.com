@@ -14,9 +14,9 @@ document.querySelectorAll('[data-deck]').forEach((deck) => {
       const real = (i - front + n) % n; // 0 = front
       const visible = real < 4;
       const pos = Math.min(real, 3); // park hidden cards behind the last visible one
-      const x = pos === 0 ? dx : pos * 26;
-      const rot = pos === 0 ? dx / 18 : pos * 3.5;
-      card.style.transform = `translate(${x}px, ${pos * -10}px) rotate(${rot}deg) scale(${1 - pos * 0.05})`;
+      const x = pos === 0 ? dx : pos * 18;
+      const rot = pos === 0 ? dx / 18 : pos * 2.5;
+      card.style.transform = `translate(${x}px, ${pos * -8}px) rotate(${rot}deg) scale(${1 - pos * 0.05})`;
       card.style.zIndex = n - real;
       card.style.opacity = visible ? 1 - real * 0.12 : 0;
       card.style.pointerEvents = real === 0 ? 'auto' : 'none';

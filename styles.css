@@ -6,8 +6,6 @@
 :is(.hello,.feature-video,.mini-video,.project,.media-card,.community-photo):is(:hover,:focus-within) img{filter:grayscale(0)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 /* draft/positioning-control */
-.draft-banner{background:#111;color:#fff;font-size:11px;text-align:center;padding:8px 12px;letter-spacing:.4px}
-mark.confirm{background:#fff3b0;color:inherit;border-bottom:1px dashed #b38f00;padding:0 2px}
 .hero-actions .button-outline{min-width:0}
 .needs-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
 .needs-grid article{border-top:1px solid #111;padding-top:20px;display:flex;flex-direction:column;gap:12px}
@@ -75,3 +73,8 @@ mark.confirm{background:#fff3b0;color:inherit;border-bottom:1px dashed #b38f00;p
 @media(max-width:920px){.deck-wrap{padding:10px 30px 0 0}}
 @media(max-width:650px){.deck{max-width:300px}.deck-wrap{padding-right:60px}.deck-meta strong{font-size:19px}.deck-hint{display:none}}
 .hero-split{overflow-x:clip}
+/* deck: leave room for the fan so no card is clipped; credentials line */
+.deck-wrap{padding:36px 90px 0 0;align-items:flex-start}.deck{max-width:440px}.deck-controls{align-self:center;margin-right:-90px}
+.hs-small{font-size:12px;line-height:1.55;color:#444;align-items:center;max-width:470px}.hs-small strong{color:#111;font-weight:600}.hs-small img{width:48px;height:48px;flex:none}
+@media(max-width:920px){.deck-wrap{padding:30px 80px 0 0}.deck-controls{margin-right:-80px}}
+@media(max-width:650px){.deck{max-width:none}.deck-wrap{padding:24px 64px 0 0}.deck-controls{margin-right:-64px}}
