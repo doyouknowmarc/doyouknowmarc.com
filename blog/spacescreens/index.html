@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpaceScreens gives my MacBook another display — Marc Kroll</title>
+  <meta name="description" content="I built a Mac app that creates virtual extended displays and lets me use them through movable live previews.">
+  <meta name="author" content="Marc Kroll">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://doyouknowmarc.com/blog/spacescreens/">
+  <meta name="keywords" content="SpaceScreens, virtual display, extended display, MacBook, ScreenCaptureKit, macOS">
+  <meta property="og:site_name" content="Marc Kroll"><meta property="og:locale" content="en_US"><meta property="og:type" content="article">
+  <meta property="og:url" content="https://doyouknowmarc.com/blog/spacescreens/"><meta property="og:title" content="SpaceScreens gives my MacBook another display"><meta property="og:description" content="I built a Mac app that creates virtual extended displays and lets me use them through movable live previews.">
+  <meta property="og:image" content="https://doyouknowmarc.com/blog/spacescreens/manager.jpg"><meta property="og:image:width" content="1040"><meta property="og:image:height" content="644">
+  <meta property="article:published_time" content="2026-11-20"><meta property="article:author" content="https://www.linkedin.com/in/doyouknowmarc/"><meta property="article:tag" content="macOS"><meta property="article:tag" content="Virtual display"><meta property="article:tag" content="ScreenCaptureKit">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="SpaceScreens gives my MacBook another display"><meta name="twitter:description" content="I built a Mac app that creates virtual extended displays and lets me use them through movable live previews."><meta name="twitter:image" content="https://doyouknowmarc.com/blog/spacescreens/manager.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://doyouknowmarc.com/blog/spacescreens/#post",
+      "url": "https://doyouknowmarc.com/blog/spacescreens/",
+      "mainEntityOfPage": "https://doyouknowmarc.com/blog/spacescreens/",
+      "headline": "SpaceScreens gives my MacBook another display",
+      "description": "I built a Mac app that creates virtual extended displays and lets me use them through movable live previews.",
+      "image": [
+        "https://doyouknowmarc.com/blog/spacescreens/manager.jpg"
+      ],
+      "datePublished": "2026-11-20",
+      "dateModified": "2026-11-20",
+      "inLanguage": "en",
+      "keywords": [
+        "SpaceScreens",
+        "virtual display",
+        "extended display",
+        "MacBook",
+        "ScreenCaptureKit",
+        "macOS"
+      ],
+      "author": {
+        "@id": "https://doyouknowmarc.com/#person"
+      },
+      "publisher": {
+        "@id": "https://doyouknowmarc.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://doyouknowmarc.com/#website"
+      },
+      "about": {
+        "@id": "https://doyouknowmarc.com/blog/spacescreens/#app"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://doyouknowmarc.com/blog/spacescreens/#app",
+      "name": "SpaceScreens",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "macOS",
+      "author": {
+        "@id": "https://doyouknowmarc.com/#person"
+      },
+      "screenshot": "https://doyouknowmarc.com/blog/spacescreens/manager.jpg"
+    }
+  ]
+}
+  </script>
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="../../favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../build-notes.css">
+  <script type="module" src="../../assets/consent/dykm-consent.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header wrap"><a href="../../" class="wordmark" aria-label="Marc Kroll home">marc<span>.</span></a><nav aria-label="Main navigation"><a href="../../about/">About</a><a href="../../#work">Projects</a><a href="../../#watch">Watch &amp; read</a><a href="../../#community">Speaking &amp; workshops</a></nav><a class="button button-small" href="https://www.linkedin.com/in/doyouknowmarc/">Let’s connect ↗</a></header>
+<main id="main" class="wrap">
+<article class="build-note">
+  <p class="eyebrow">BUILDING IN PUBLIC · NOTES</p>
+  <h1>SpaceScreens gives my MacBook another display</h1>
+  <p class="dek">I built a Mac app that creates virtual extended displays and lets me use them through movable live previews.</p>
+  <p class="byline"><time datetime="2026-11-20">20 November 2026</time> · Marc Kroll · Mac app</p>
+
+<p>When I’m working on a laptop, I sometimes want an extra display for a reference window or a preview I can check without rearranging the rest of the desktop. SpaceScreens creates that display in macOS and gives me a window to see and interact with it on the MacBook.</p>
+
+  <figure>
+    <a href="manager.jpg"><img src="manager.jpg" width="1040" height="644" alt="The SpaceScreens manager with a connected 1280 by 800 virtual display and buttons to show its preview or disconnect it." decoding="async"></a>
+    <figcaption>SpaceScreens with one 1280 × 800 virtual display connected.</figcaption>
+  </figure>
+
+  <h2>Adding and using a virtual display</h2>
+  <p>Pick a resolution and click <strong>Add Screen</strong>. SpaceScreens can create up to three extended displays. The macOS Displays settings show how they’re arranged, so I can move an app onto a virtual display by dragging its window across the corresponding edge. The live preview shows what’s on that display. I can also move the preview window onto another desktop in Mission Control.</p>
+
+  <figure class="figure-wide">
+    <a href="preview.jpg"><img src="preview.jpg" width="1600" height="1028" alt="Live preview of the virtual desktop, with a footer indicating that the display sits to the left of the main screen." decoding="async"></a>
+    <figcaption>The live preview of a virtual display arranged to the left of the MacBook screen.</figcaption>
+  </figure>
+
+  <p>Click the preview (or <strong>Expand</strong>) to enlarge it, then click inside it to move the pointer into the virtual display and use the apps there. Move back across the connecting edge or press <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>,</kbd> to return to the MacBook screen. Closing the preview keeps the display connected. I can reopen it from the manager or disconnect it when I’m done.</p>
+
+  <h2>How the preview works</h2>
+  <p>The build targets Apple silicon Macs running macOS 14 or later. It uses an undocumented macOS interface to create the extended display and ScreenCaptureKit to render the preview locally. macOS requires screen recording permission for the preview. The app has no networking or recording-to-file feature.</p>
+</article>
+</main>
+<footer class="footer wrap"><a class="wordmark" href="../../">marc.</a><p>Marc Kroll · Vienna · German &amp; English</p><div><a href="https://www.linkedin.com/in/doyouknowmarc/" rel="me">LinkedIn ↗</a><a href="https://github.com/doyouknowmarc" rel="me">GitHub ↗</a><a href="https://www.youtube.com/@doyouknowmarc" rel="me">YouTube ↗</a><button class="linklike" type="button" data-ck-footer-link>Privacy settings</button></div></footer>
+</body>
+</html>
