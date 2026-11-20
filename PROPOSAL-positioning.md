@@ -50,3 +50,13 @@ Tool groups:
 - The About page and LinkedIn headline still use the old positioning.
 - Two groups have an odd number of cards, so the grid leaves one empty slot.
 - Checked at desktop width and in a 375 px phone viewport; no horizontal overflow.
+
+## Hero variants (round 2)
+
+"AI you control" names the theme but not the benefit. The visitor's gain is getting what AI offers without the risk to their data. Each variant states that from a different angle, in a split layout with the copy on the left. Switch between them with the buttons in the draft banner or `?hero=1|2|3`.
+
+1. **Big-company AI** · "The AI big companies use. Without handing over your data." The Robin Hood framing: enterprise know-how, now for smaller teams. Grayscale portrait, three proof figures under the copy.
+2. **Team + data** · "Your team working with AI. Your data staying in the building." Leads with the outcome for a business owner and names the DACH audience. Colour portrait with three floating proof badges, plus a checklist.
+3. **Private tools** · "Private AI that works on your own machines." Leads with the product proof, with three tool screenshots on the right. Strongest for creators and individuals, weakest for the workshop business.
+
+My pick is 1 for the headline, with the floating proof badges from 2. Variant 1 repeats Doxis and the 56 members from the proof strip below it; if you pick it, the strip should shrink or go.
