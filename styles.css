@@ -5,3 +5,26 @@
 .hello img,.feature-image img,.mini-image img,.project-image img,.media-image img,.community-photo img{transition:transform .3s ease,filter .3s ease}
 :is(.hello,.feature-video,.mini-video,.project,.media-card,.community-photo):is(:hover,:focus-within) img{filter:grayscale(0)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+/* draft/positioning-control */
+.draft-banner{background:#111;color:#fff;font-size:11px;text-align:center;padding:8px 12px;letter-spacing:.4px}
+mark.confirm{background:#fff3b0;color:inherit;border-bottom:1px dashed #b38f00;padding:0 2px}
+.hero-actions .button-outline{min-width:0}
+.needs-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.needs-grid article{border-top:1px solid #111;padding-top:20px;display:flex;flex-direction:column;gap:12px}
+.needs-grid .quote{font-family:Georgia,serif;font-size:21px;line-height:1.3;letter-spacing:-.4px}
+.needs-grid p:not(.quote){font-size:12px;line-height:1.75;color:var(--muted)}
+.needs-grid a{font-size:11px;font-weight:600;margin-top:auto}
+.byo{margin-top:40px;border:1px solid var(--line);padding:20px 24px;display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:baseline}
+.byo .eyebrow{color:var(--muted)}.byo p:not(.eyebrow){font-size:13px;line-height:1.7}
+.tool-group+.tool-group{margin-top:60px}
+.group-head{display:flex;justify-content:space-between;align-items:baseline;gap:30px;border-bottom:1px solid #111;padding-bottom:12px;margin-bottom:26px}
+.group-head p:not(.eyebrow){font-size:12px;color:var(--muted);max-width:420px;text-align:right}
+.control{list-style:none;padding:0;margin:0 0 14px;display:flex;flex-wrap:wrap;gap:6px}
+.control li{font-size:9px;letter-spacing:.6px;border:1px solid #111;padding:3px 7px;text-transform:uppercase}
+.voices-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.voices-grid figure{border:1px solid var(--line);padding:26px;display:flex;flex-direction:column;gap:18px}
+.voices-grid blockquote{margin:0;font-family:Georgia,serif;font-size:20px;line-height:1.35}
+.voices-grid figcaption{font-size:11px;color:var(--muted);line-height:1.6}
+#community .spotlight{margin-bottom:50px}
+@media(max-width:920px){.needs-grid{grid-template-columns:1fr 1fr}.voices-grid{grid-template-columns:1fr}}
+@media(max-width:650px){.needs-grid{grid-template-columns:1fr}.byo{grid-template-columns:1fr;gap:8px}.group-head{display:block}.group-head p:not(.eyebrow){text-align:left;margin-top:6px}.hero-actions{flex-wrap:wrap}}
