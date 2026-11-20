@@ -267,5 +267,59 @@
     "source_page": "https://doyouknowmarc.com/blog/spacescreens/",
     "notes": "Project card image made from blog/spacescreens/manager.jpg, 1200 wide",
     "type": "screenshot"
+  },
+  {
+    "file": "blog/voice-sales-interview/briefing-de.jpg",
+    "source_page": "https://doyouknowmarc.com/blog/voice-sales-interview/",
+    "notes": "App screenshot by Marc: German briefing for a synthetic interview, rated Passend für Folgegespräch",
+    "type": "screenshot"
+  },
+  {
+    "file": "blog/voice-sales-interview/briefing-en.jpg",
+    "source_page": "https://doyouknowmarc.com/blog/voice-sales-interview/",
+    "notes": "App screenshot by Marc: English briefing for a synthetic interview, rated Follow up later",
+    "type": "screenshot"
+  },
+  {
+    "file": "blog/voice-sales-interview/signals-en.jpg",
+    "source_page": "https://doyouknowmarc.com/blog/voice-sales-interview/",
+    "notes": "App screenshot by Marc: TypeSafe qualification signals for the synthetic English interview",
+    "type": "screenshot"
+  },
+  {
+    "file": "blog/voice-sales-interview/evidence-de.jpg",
+    "source_page": "https://doyouknowmarc.com/blog/voice-sales-interview/",
+    "notes": "App screenshot by Marc: quoted evidence and objections from the synthetic German interview",
+    "type": "screenshot"
+  },
+  {
+    "file": "blog/voice-sales-interview/interview.jpg",
+    "source_page": "https://doyouknowmarc.com/blog/voice-sales-interview/",
+    "notes": "App screenshot by Marc: interview screen with consent note",
+    "type": "screenshot"
+  },
+  {
+    "file": "blog/voice-sales-interview/settings.jpg",
+    "source_page": "https://doyouknowmarc.com/blog/voice-sales-interview/",
+    "notes": "App screenshot by Marc: settings with empty API key fields and the example offer profile",
+    "type": "screenshot"
+  },
+  {
+    "file": "blog/voice-sales-interview/connection.svg",
+    "source_page": "https://doyouknowmarc.com/blog/voice-sales-interview/",
+    "notes": "Diagram by Marc (Mermaid): how browser, backend, ElevenLabs and TypeSafe connect",
+    "type": "graphic"
+  },
+  {
+    "file": "blog/voice-sales-interview/interview-loop.svg",
+    "source_page": "https://doyouknowmarc.com/blog/voice-sales-interview/",
+    "notes": "Diagram by Marc (Mermaid): the interview loop with tangents and bridge back",
+    "type": "graphic"
+  },
+  {
+    "file": "assets/media/voice-sales-interview.jpg",
+    "source_page": "https://doyouknowmarc.com/blog/voice-sales-interview/",
+    "notes": "Project card image made from blog/voice-sales-interview/briefing-de.jpg, 1200 wide",
+    "type": "screenshot"
   }
 ]

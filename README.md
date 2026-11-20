@@ -7,7 +7,7 @@ A minimal black-and-white portfolio with real project imagery, talk and video pr
 
 ## Content
 
-- `index.html`: a local-AI hero (“Private AI on your own machine”) with a swipeable deck of nine local-first tools, a strip of the local models used, a “What clients tell me” section, sixteen project cards grouped by who they help (each private tool carries a label saying what happens to your data), workshops and talks, the filterable library and contact. The three Mac apps (Transkripta, PortWatch, SpaceScreens) link to their build notes in `blog/`.
+- `index.html`: a local-AI hero (“Private AI on your own machine”) with a swipeable deck of nine local-first tools, a strip of the local models used, a “What clients tell me” section, seventeen project cards grouped by who they help (each private tool carries a label saying what happens to your data), workshops and talks, the filterable library and contact. The three Mac apps (Transkripta, PortWatch, SpaceScreens) and the Voice Sales Interview link to their build notes in `blog/`. Voice Sales Interview uses cloud models (ElevenLabs, TypeSafe), and its card says so.
 - `deck.js`: the hero card deck. Swipe or drag the front card, use the arrow buttons or ←/→; a click without a drag opens the card. Hidden cards stay inside the page width; reduced motion turns the animation off.
 - `styles.css`: monochrome palette, serif headings, responsive layouts and grayscale image presentation. Original bundled image files retain their colour, which is revealed on card hover and keyboard focus.
 - `script.js`: accessible Everything / Videos / Posts filtering, and an optional hero introduction link.
