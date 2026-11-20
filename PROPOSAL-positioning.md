@@ -60,3 +60,14 @@ Tool groups:
 3. **Private tools** · "Private AI that works on your own machines." Leads with the product proof, with three tool screenshots on the right. Strongest for creators and individuals, weakest for the workshop business.
 
 My pick is 1 for the headline, with the floating proof badges from 2. Variant 1 repeats Doxis and the 56 members from the proof strip below it; if you pick it, the strip should shrink or go.
+
+## Round 3: local AI first
+
+Marc picked the private-tools direction. Changes:
+
+- **Hero:** "Private AI on your own machine. No frontier lab required." The copy is about local AI and control over your data. Workshop and team-lead claims are gone from the top; they stay further down in "Workshops & talks". The other two hero variants were removed (they're in the previous commit).
+- **Card deck** (`deck.js`): nine local-first tools fanned on the right. Swipe or drag, use the arrow buttons or ←/→ keys; clicking the front card opens the project. Reduced-motion users get no animation.
+- **Proof strip** now reads "Runs locally with Whisper, Ollama, llama.cpp, MLX, Kokoro, Apple Vision". The separate "Bring your own AI" box is gone.
+- **Needs section:** "I want my team to actually use AI" is replaced by "We don't want to depend on one AI company."
+
+Found on the live site: `assets/media/audio-rescue-card.jpg` is a desktop screenshot of a wallpaper with the Brave menu bar, not the talk slide its alt text describes. The deck uses `audio-rescue-before-after-poster.jpg` instead.
