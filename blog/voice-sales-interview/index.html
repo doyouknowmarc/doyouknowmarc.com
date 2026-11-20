@@ -11,9 +11,9 @@
   <meta name="keywords" content="voice agent, ElevenLabs, TypeSafe, Jev, lead qualification, sales discovery, needs assessment, decision model">
   <meta property="og:site_name" content="Marc Kroll"><meta property="og:locale" content="en_US"><meta property="og:type" content="article">
   <meta property="og:url" content="https://doyouknowmarc.com/blog/voice-sales-interview/"><meta property="og:title" content="A voice agent that turns a sales call into a lead briefing"><meta property="og:description" content="I built a German and English voice agent that interviews leads, then lets a decision model rate the call and writes a structured briefing.">
-  <meta property="og:image" content="https://doyouknowmarc.com/blog/voice-sales-interview/briefing-de.jpg"><meta property="og:image:width" content="1800"><meta property="og:image:height" content="1116">
+  <meta property="og:image" content="https://doyouknowmarc.com/blog/voice-sales-interview/briefing.jpg"><meta property="og:image:width" content="1800"><meta property="og:image:height" content="1116">
   <meta property="article:published_time" content="2026-11-20"><meta property="article:author" content="https://www.linkedin.com/in/doyouknowmarc/"><meta property="article:tag" content="Voice agents"><meta property="article:tag" content="ElevenLabs"><meta property="article:tag" content="TypeSafe"><meta property="article:tag" content="Sales">
-  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="A voice agent that turns a sales call into a lead briefing"><meta name="twitter:description" content="I built a German and English voice agent that interviews leads, then lets a decision model rate the call and writes a structured briefing."><meta name="twitter:image" content="https://doyouknowmarc.com/blog/voice-sales-interview/briefing-de.jpg">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="A voice agent that turns a sales call into a lead briefing"><meta name="twitter:description" content="I built a German and English voice agent that interviews leads, then lets a decision model rate the call and writes a structured briefing."><meta name="twitter:image" content="https://doyouknowmarc.com/blog/voice-sales-interview/briefing.jpg">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -25,7 +25,7 @@
       "mainEntityOfPage": "https://doyouknowmarc.com/blog/voice-sales-interview/",
       "headline": "A voice agent that turns a sales call into a lead briefing",
       "description": "I built a German and English voice agent that interviews leads, then lets a decision model rate the call and writes a structured briefing.",
-      "image": ["https://doyouknowmarc.com/blog/voice-sales-interview/briefing-de.jpg"],
+      "image": ["https://doyouknowmarc.com/blog/voice-sales-interview/briefing.jpg"],
       "datePublished": "2026-11-20",
       "dateModified": "2026-11-20",
       "inLanguage": "en",
@@ -42,7 +42,7 @@
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
       "author": { "@id": "https://doyouknowmarc.com/#person" },
-      "screenshot": "https://doyouknowmarc.com/blog/voice-sales-interview/briefing-de.jpg"
+      "screenshot": "https://doyouknowmarc.com/blog/voice-sales-interview/briefing.jpg"
     }
   ]
 }
@@ -67,8 +67,8 @@
 <p>Before I build something for a client, I want to know where their process actually hurts, who decides, and whether they would pay for a small pilot. Those first conversations follow the same pattern every time. So I built an agent that runs them: a lead clicks “Start interview”, talks for about ten minutes, and I get a briefing with the problem, the evidence, the open objections and a recommended next step.</p>
 
   <figure class="figure-wide">
-    <a href="briefing-de.jpg"><img src="briefing-de.jpg" width="1800" height="1116" alt="The result view with a German briefing rated “Passend für Folgegespräch” and the recommended next steps." decoding="async"></a>
-    <figcaption>A German briefing for a synthetic interview with a cleaning company. The lead agreed to a call, so the code rated it a good fit for a follow-up.</figcaption>
+    <a href="briefing.jpg"><img src="briefing.jpg" width="1800" height="1116" alt="The result view with a briefing rated “Good fit for a follow-up call” and the recommended next steps." decoding="async"></a>
+    <figcaption>A briefing for a synthetic interview with a cleaning company. The lead agreed to a call, so the code rated it a good fit for a follow-up.</figcaption>
   </figure>
 
   <h2>The conversation runs on ElevenLabs</h2>
@@ -87,12 +87,14 @@
     <figcaption>The interview loop. Tangents and questions lead back to the checklist; the call ends after the summary and the next step, or as soon as the lead wants to stop.</figcaption>
   </figure>
 
-  <p>The agent uses Eleven v4 Turbo, which turns on ElevenLabs’ expressive mode. The prompt asks for a warm, curious tone and lets the model add a tag now and then: a short <code>[sighs]</code> when someone describes a painful process, <code>[laughs]</code> for a joke, <code>[excited]</code> when the lead agrees to a next step and <code>[slow]</code> for the summary. At most one per reply, and the tags are stripped from the transcript before anything is evaluated.</p>
+  <p>The lead can cut in at any time, even during the greeting. The agent stops, doesn’t repeat its unfinished sentence and responds to what the lead said. Short acknowledgements like “mhm”, “yeah” or “okay” don’t count as interruptions, so the agent can finish its thought, and turn-taking is set to patient so people get time to think. If someone is in a noisy place, they can mute their microphone with a button or the M key. If answers still come through garbled, the agent suggests a quieter spot.</p>
 
   <figure class="figure-wide">
-    <a href="interview.jpg"><img src="interview.jpg" width="1800" height="1116" alt="The interview screen with a consent note and a large “Start interview” button." decoding="async"></a>
-    <figcaption>The interview screen. The lead sees a note on how the call is processed before the button unlocks.</figcaption>
+    <a href="interview.jpg"><img src="interview.jpg" width="1800" height="1116" alt="The interview screen during a call: an “End interview” button, a “Mute microphone” button and a live transcript where an agent line is marked as interrupted." decoding="async"></a>
+    <figcaption>The interview screen in its in-call layout, staged with lines from the sample transcript. The lead cut in on the second question, so that line is marked as interrupted.</figcaption>
   </figure>
+
+  <p>The agent uses Eleven v4 Turbo, which turns on ElevenLabs’ expressive mode. The prompt asks for a warm, curious tone and lets the model add a tag now and then: a short <code>[sighs]</code> when someone describes a painful process, <code>[laughs]</code> for a joke, <code>[excited]</code> when the lead agrees to a next step and <code>[slow]</code> for the summary. At most one per reply, and the tags are stripped from the transcript before anything is evaluated.</p>
 
   <h2>A decision model rates the call, code decides</h2>
   <p>The qualification uses Jev, TypeSafe’s decision model. Jev doesn’t write text. It answers typed questions with calibrated probabilities, so I ask it small, concrete ones: did the lead name a concrete problem, describe a real case, put a number on the impact, agree to talk to me? Does the problem fit my problem area? For each of eight objection types, did the lead raise it, and do they still hold it at the end? Every statement from the lead also gets a yes/no question about whether it describes the problem, the impact or the timing, so the briefing can quote the lead’s own words instead of a summary.</p>
@@ -100,13 +102,13 @@
   <p>The status itself is plain code: a small truth table turns those answers into “good fit for a follow-up call”, “needs clarification”, “follow up later” or “outside the offer”. Anything above 70 % reads as yes and anything below 30 % as no. In between it stays “unclear” and shows up as an open question.</p>
 
   <figure class="figure-wide">
-    <a href="signals-en.jpg"><img src="signals-en.jpg" width="1800" height="1116" alt="A table of qualification signals with readings such as “no priority” and “wants information first” and their probabilities." decoding="async"></a>
+    <a href="signals.jpg"><img src="signals.jpg" width="1800" height="1116" alt="A table of qualification signals with readings such as “no priority” and “wants information first” and their probabilities." decoding="async"></a>
     <figcaption>The signals behind an English briefing. This lead wants to wait until next year and asks for something in writing, so the rating is “Follow up later”.</figcaption>
   </figure>
 
   <figure class="figure-wide">
-    <a href="evidence-de.jpg"><img src="evidence-de.jpg" width="1800" height="1116" alt="Quotes from the lead for main problem, impact and timing, followed by a table of objections and whether they are still open." decoding="async"></a>
-    <figcaption>Evidence and objections, quoted from the transcript. The price objection stays “unclear” at 51 %, so I ask about it in the follow-up instead of guessing.</figcaption>
+    <a href="evidence.jpg"><img src="evidence.jpg" width="1800" height="1116" alt="Quotes from the lead for main problem, impact and timing, followed by a table of objections and whether they are still open." decoding="async"></a>
+    <figcaption>Evidence and objections, quoted from the transcript. The bad experience with an earlier CRM is still open at the end, so the briefing tells me to address it in the follow-up.</figcaption>
   </figure>
 
   <h2>Everyone brings their own keys</h2>
