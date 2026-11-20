@@ -1,0 +1,77 @@
+.build-note {
+  max-width: 720px;
+  margin-inline: auto;
+  padding-block: 70px 90px;
+}
+
+.build-note h1 {
+  font-size: clamp(38px, 5.5vw, 64px);
+  margin-block: 12px 18px;
+}
+
+.build-note .dek {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.build-note .byline {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 14px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--line);
+}
+
+.build-note h2 {
+  font-size: 30px;
+  letter-spacing: -1px;
+  margin-block: 38px 12px;
+}
+
+.build-note > p:not([class]) {
+  font-size: 16px;
+  line-height: 1.75;
+  margin-top: 16px;
+}
+
+.build-note figure {
+  margin-block: 28px;
+}
+
+.build-note .figure-wide {
+  margin-inline: -80px;
+}
+
+.build-note .figure-compact {
+  max-width: 530px;
+  margin-inline: auto;
+}
+
+.build-note figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+}
+
+.build-note figcaption {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 9px;
+}
+
+.build-note code, .build-note kbd {
+  background: var(--soft);
+  padding: 2px 4px;
+}
+
+@media (max-width: 920px) {
+  .build-note .figure-wide { margin-inline: 0; }
+}
+
+@media (max-width: 650px) {
+  .build-note { padding-block: 38px 55px; }
+  .build-note h2 { font-size: 26px; }
+}

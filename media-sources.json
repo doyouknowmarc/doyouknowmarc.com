@@ -219,5 +219,53 @@
     "source_page": "https://doyouknowmarc.com/blog/livestream-audio-rescue/",
     "notes": "1200×630 share image: post title, caption fix example and a video frame at 19:16",
     "type": "graphic"
+  },
+  {
+    "file": "blog/transkripta/review.jpg",
+    "source_page": "https://doyouknowmarc.com/blog/transkripta/",
+    "notes": "App screenshot by Marc: Review view with a synthetic 27-second demo recording; Key Finding tag applied by hand",
+    "type": "screenshot"
+  },
+  {
+    "file": "blog/transkripta/import.jpg",
+    "source_page": "https://doyouknowmarc.com/blog/transkripta/",
+    "notes": "App screenshot by Marc: Import screen with the demo WAV and Whisper Large Turbo selected",
+    "type": "screenshot"
+  },
+  {
+    "file": "assets/media/transkripta.jpg",
+    "source_page": "https://doyouknowmarc.com/blog/transkripta/",
+    "notes": "Project card image made from blog/transkripta/review.jpg, 1200 wide",
+    "type": "screenshot"
+  },
+  {
+    "file": "blog/portwatch/panel.jpg",
+    "source_page": "https://doyouknowmarc.com/blog/portwatch/",
+    "notes": "App screenshot by Marc: Menu-bar panel with sample sockets and process IDs",
+    "type": "screenshot"
+  },
+  {
+    "file": "assets/media/portwatch.jpg",
+    "source_page": "https://doyouknowmarc.com/blog/portwatch/",
+    "notes": "Project card image made from blog/portwatch/panel.jpg, 1200 wide",
+    "type": "screenshot"
+  },
+  {
+    "file": "blog/spacescreens/manager.jpg",
+    "source_page": "https://doyouknowmarc.com/blog/spacescreens/",
+    "notes": "App screenshot by Marc: Manager window with one 1280×800 virtual display",
+    "type": "screenshot"
+  },
+  {
+    "file": "blog/spacescreens/preview.jpg",
+    "source_page": "https://doyouknowmarc.com/blog/spacescreens/",
+    "notes": "App screenshot by Marc: Live preview of a virtual display showing the default macOS wallpaper",
+    "type": "screenshot"
+  },
+  {
+    "file": "assets/media/spacescreens.jpg",
+    "source_page": "https://doyouknowmarc.com/blog/spacescreens/",
+    "notes": "Project card image made from blog/spacescreens/manager.jpg, 1200 wide",
+    "type": "screenshot"
   }
 ]
