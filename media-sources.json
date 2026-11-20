@@ -269,33 +269,27 @@
     "type": "screenshot"
   },
   {
-    "file": "blog/voice-sales-interview/briefing-de.jpg",
+    "file": "blog/voice-sales-interview/briefing.jpg",
     "source_page": "https://doyouknowmarc.com/blog/voice-sales-interview/",
-    "notes": "App screenshot by Marc: German briefing for a synthetic interview, rated Passend für Folgegespräch",
+    "notes": "App screenshot by Marc: English briefing for a synthetic interview, rated Good fit for a follow-up call",
     "type": "screenshot"
   },
   {
-    "file": "blog/voice-sales-interview/briefing-en.jpg",
+    "file": "blog/voice-sales-interview/evidence.jpg",
     "source_page": "https://doyouknowmarc.com/blog/voice-sales-interview/",
-    "notes": "App screenshot by Marc: English briefing for a synthetic interview, rated Follow up later",
+    "notes": "App screenshot by Marc: quoted evidence and objections from the synthetic interview",
     "type": "screenshot"
   },
   {
-    "file": "blog/voice-sales-interview/signals-en.jpg",
+    "file": "blog/voice-sales-interview/signals.jpg",
     "source_page": "https://doyouknowmarc.com/blog/voice-sales-interview/",
-    "notes": "App screenshot by Marc: TypeSafe qualification signals for the synthetic English interview",
-    "type": "screenshot"
-  },
-  {
-    "file": "blog/voice-sales-interview/evidence-de.jpg",
-    "source_page": "https://doyouknowmarc.com/blog/voice-sales-interview/",
-    "notes": "App screenshot by Marc: quoted evidence and objections from the synthetic German interview",
+    "notes": "App screenshot by Marc: TypeSafe qualification signals for a synthetic interview rated Follow up later",
     "type": "screenshot"
   },
   {
     "file": "blog/voice-sales-interview/interview.jpg",
     "source_page": "https://doyouknowmarc.com/blog/voice-sales-interview/",
-    "notes": "App screenshot by Marc: interview screen with consent note",
+    "notes": "App screenshot by Marc: in-call layout with mute button; DOM staged with lines from the sample transcript",
     "type": "screenshot"
   },
   {
@@ -319,7 +313,7 @@
   {
     "file": "assets/media/voice-sales-interview.jpg",
     "source_page": "https://doyouknowmarc.com/blog/voice-sales-interview/",
-    "notes": "Project card image made from blog/voice-sales-interview/briefing-de.jpg, 1200 wide",
+    "notes": "Project card image made from blog/voice-sales-interview/briefing.jpg, 1200 wide",
     "type": "screenshot"
   }
 ]
