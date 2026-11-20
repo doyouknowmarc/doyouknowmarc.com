@@ -7,7 +7,8 @@ A minimal black-and-white portfolio with real project imagery, talk and video pr
 
 ## Content
 
-- `index.html`: public copy, sixteen project cards (the four originals plus Write, Audio Cut, ShortsPilot, Typing on Top, Talking on Top, Souls, WebCompare, ConsentKit and OwnYourName, each with a screenshot of its live page, and the Mac apps Transkripta, PortWatch and SpaceScreens, which link to their build notes in `blog/`), the featured talks with the MARC hackathon demo beside them, and eleven library cards.
+- `index.html`: a local-AI hero (“Private AI on your own machine”) with a swipeable deck of nine local-first tools, a strip of the local models used, a “What clients tell me” section, sixteen project cards grouped by who they help (each private tool carries a label saying what happens to your data), workshops and talks, the filterable library and contact. The three Mac apps (Transkripta, PortWatch, SpaceScreens) link to their build notes in `blog/`.
+- `deck.js`: the hero card deck. Swipe or drag the front card, use the arrow buttons or ←/→; a click without a drag opens the card. Hidden cards stay inside the page width; reduced motion turns the animation off.
 - `styles.css`: monochrome palette, serif headings, responsive layouts and grayscale image presentation. Original bundled image files retain their colour, which is revealed on card hover and keyboard focus.
 - `script.js`: accessible Everything / Videos / Posts filtering, and an optional hero introduction link.
 - `site-config.js`: introduction-video URL, empty for now (the hero button was removed with the Codex Ambassador video). To bring it back, add the button with `id="intro-video-link"` to the hero and set the URL.
